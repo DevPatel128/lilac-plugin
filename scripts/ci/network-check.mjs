@@ -41,7 +41,7 @@ const hits = [];
     const p = join(d, e);
     if (statSync(p).isDirectory()) { walk(p); continue; }
     const ext = e.slice(e.lastIndexOf('.'));
-    const rel = relative(dir, p);
+    const rel = relative(dir, p).replace(/\\/g, '/'); // allowlist paths use /, also on Windows
     const text = readFileSync(p, 'utf8');
     const [body, pats] = ['.mjs', '.js', '.ts'].includes(ext) ? [stripJs(text), JS]
       : ext === '.sh' ? [stripSh(text), SH] : ext === '.json' ? [text, SH] : [null];
