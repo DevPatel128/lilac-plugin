@@ -19,7 +19,7 @@ First, run `/lilac:doctor` (or `node scripts/doctor.mjs` in the plugin folder). 
 | You want to see or delete saved data | It is in `~/.lilac/` on your computer | `rm -r ~/.lilac` removes all of it |
 | Gemini CLI or Antigravity has fewer agents | Those tools cannot restrict an agent's tools, so the four read-only agents are left out on purpose so none can silently gain write access | Nothing to fix |
 | It does not work in Cursor, Codex, Copilot, Windsurf, Cline, Gemini or Antigravity | Their files are generated in each tool's documented format, but a real install in each has not been tested yet | Open an issue with your tool and version, your operating system and the output of `node scripts/doctor.mjs` |
-| It does not work on Windows | Windows has not been tested yet | Same as above |
+| It does not work on Windows | The plugin's own checks run on Windows in CI, but the browser tools (browser QA, controls, simulated visitors) are only tested on macOS and Linux | Run `/lilac:doctor`, then open an issue with its output |
 | A folder name with spaces | Tested and supported | If it fails, include the path shape in your issue |
 
 ## Reporting a problem

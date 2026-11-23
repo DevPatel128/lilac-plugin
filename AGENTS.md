@@ -73,7 +73,7 @@ Stop and ask the human one clear question with the options. Say what you already
 ## What Lilac cannot do yet (tell the human if it matters)
 
 - Real installs were tested in Claude Code only. Other tools have generated files that were checked for structure only.
-- Windows is untested. Browser QA and simulated visitors were run with macOS Chrome only.
+- The plugin's own checks run in CI on macOS, Linux and Windows. Browser QA and simulated visitors run in CI on Linux and locally on macOS; the browser tools are not run on Windows.
 - Simulated visitors measure whether tasks can be completed with each method; they are not real people and say nothing about taste or demand.
 - Some skills mention scripts from the full Lilac starter kit (for example `lilac-check.sh`, `email-check.mjs`) that are not in this plugin. Use the plugin's own checks above instead and say so.
 - Gemini CLI and Antigravity cannot restrict an agent's tools, so the read-only agents are not provided there.
