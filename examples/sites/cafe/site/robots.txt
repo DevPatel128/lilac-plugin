@@ -1,0 +1,4 @@
+# Corner Kiln: fictional demo site. example.com is a placeholder (ASSUMED).
+User-agent: *
+Allow: /
+Sitemap: https://example.com/corner-kiln/sitemap.xml

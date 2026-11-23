@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Biscuit and Bowl: fictional sample site. example.com is a placeholder domain. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://example.com/biscuit-and-bowl/</loc></url>
+<url><loc>https://example.com/biscuit-and-bowl/products.html</loc></url>
+<url><loc>https://example.com/biscuit-and-bowl/how-it-works.html</loc></url>
+<url><loc>https://example.com/biscuit-and-bowl/ingredients.html</loc></url>
+<url><loc>https://example.com/biscuit-and-bowl/faq.html</loc></url>
+<url><loc>https://example.com/biscuit-and-bowl/contact.html</loc></url>
+<url><loc>https://example.com/biscuit-and-bowl/privacy.html</loc></url>
+</urlset>

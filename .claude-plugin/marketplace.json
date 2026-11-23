@@ -1,0 +1,7 @@
+{
+  "name": "lilac",
+  "owner": { "name": "Dev Patel", "email": "devpatel1286@gmail.com" },
+  "plugins": [
+    { "name": "lilac", "source": "./", "description": "Agent skills and roles to build and ship with proof." }
+  ]
+}

@@ -1,0 +1,31 @@
+# Lilac weekly link check for a LIVE site. Copy to .github/workflows/lilac-monitor.yml yourself; hosting.mjs does not copy it.
+# STATUS: NOT yet run on GitHub. UNVERIFIED until this workflow has been pushed and a run has passed.
+# NETWORK: this is the one Lilac workflow that talks to the internet, and only to the site URL in the repository VARIABLE LILAC_LIVE_URL
+# (Settings, Secrets and variables, Actions, Variables). No secrets are used or needed. It opens no issues and posts nothing: read the run log.
+# Needs scripts/monitor.mjs in the project (copy it from the Lilac plugin).
+# Action majors verified 2026-11-21 from the official release pages:
+#   actions/checkout v7 (latest v7.0.1)  https://github.com/actions/checkout/releases/latest
+#   actions/setup-node v7 (latest v7.1.0) https://github.com/actions/setup-node/releases/latest
+name: lilac-monitor
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Check the live site's links
+        if: ${{ vars.LILAC_LIVE_URL != '' }}
+        env:
+          LIVE_URL: ${{ vars.LILAC_LIVE_URL }}
+        run: node scripts/monitor.mjs links "$LIVE_URL"
+      - name: No live URL set
+        if: ${{ vars.LILAC_LIVE_URL == '' }}
+        run: echo "Set the repository variable LILAC_LIVE_URL to check a live site. Nothing was requested."

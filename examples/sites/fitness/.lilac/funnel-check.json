@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-23T05:02:04.354Z",
+  "funnel": {
+    "goal": "book",
+    "source": ".lilac/funnel.json",
+    "site": "site",
+    "entry": [
+      "index.html"
+    ],
+    "goalPage": "contact.html",
+    "maxClicks": 3,
+    "path": {
+      "clicks": 1,
+      "pages": [
+        "index.html",
+        "contact.html"
+      ]
+    },
+    "counts": {
+      "error": 0,
+      "warn": 0,
+      "unverified": 0
+    }
+  },
+  "findings": [],
+  "counts": {
+    "error": 0,
+    "warn": 0,
+    "unverified": 0
+  }
+}

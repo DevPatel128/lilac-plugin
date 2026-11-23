@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title>Pocket Habits</title>
+<meta name="description" content="Pocket Habits is a fictional sample habit tracker. Your data stays in this browser.">
+<link rel="canonical" href="https://example.com/pocket-habits/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pocket Habits (fictional sample)">
+<meta property="og:description" content="A fictional sample habit tracker. Data stays in your browser: no accounts, no tracking.">
+<meta property="og:url" content="https://example.com/pocket-habits/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#5b3fd1">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/app.css">
+<script src="/boot.js"></script>
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="update" class="banner" role="status" hidden>
+  <span>A new version is ready.</span>
+  <button type="button" id="update-btn" class="btn">Reload to update</button>
+</div>
+<header class="site">
+  <h1 class="sitename"><a class="brand" href="#/today"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="8"/><path d="M8 17l5 5 11-12"/></svg><span>Pocket Habits</span></a></h1>
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#/today" data-route="today">Today</a></li>
+      <li><a href="#/insights" data-route="insights">Insights</a></li>
+      <li><a href="#/settings" data-route="settings">Settings</a></li>
+      <li><a href="#/help" data-route="help">Help</a></li>
+      <li><a href="#/support" data-route="support">Support</a></li>
+      <li><a href="#/about" data-route="about">About</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main" tabindex="-1">
+  <noscript><div class="noscript"><p><strong>Pocket Habits needs JavaScript.</strong> It is a small app that runs entirely in your browser and keeps your habits on this device. Nothing is sent anywhere, with or without JavaScript.</p><p>What you can do: turn JavaScript on for this page and reload. Habits you saved earlier stay in this browser. Exporting a backup is not possible without JavaScript, so turn it on first if you want one.</p><p class="muted">Pocket Habits is a fictional sample app for the Lilac framework.</p></div></noscript>
+
+  <section id="view-today" data-view="today" aria-labelledby="h-today" hidden>
+    <div class="head"><h2 id="h-today" tabindex="-1">Today</h2><p id="today-label" class="muted"></p></div>
+    <div id="tour-banner" class="callout" hidden>
+      <p><strong>New here?</strong> A 5-step tour shows how everything works.</p>
+      <div class="row"><button type="button" class="btn" id="tour-start">Take the tour</button><button type="button" class="btn ghost" id="tour-dismiss">Not now</button></div>
+    </div>
+    <div id="empty" class="empty" hidden>
+      <h3>Start with one habit</h3>
+      <p>Habits are small things you want to tick off, like drinking water. Pick a weekly target and a colour. Everything stays in this browser.</p>
+      <div class="row">
+        <button type="button" class="btn primary" data-act="new">Add your first habit</button>
+        <button type="button" class="btn" id="add-samples">Add 3 sample habits</button>
+        <button type="button" class="btn ghost" id="empty-tour" data-act="tour">Take the tour</button>
+      </div>
+    </div>
+    <div id="tools" class="tools" hidden>
+      <div class="field grow"><label for="q">Search habits</label><input id="q" type="search" autocomplete="off" maxlength="60"></div>
+      <div class="field"><label for="filter">Show</label>
+        <select id="filter"><option value="all">All habits</option><option value="open">Not done today</option><option value="done">Done today</option></select></div>
+      <div class="field"><label for="sort">Sort by</label>
+        <select id="sort"><option value="manual">Order added</option><option value="name">Name</option><option value="streak">Longest streak</option><option value="target">Weekly target</option></select></div>
+      <button type="button" class="btn primary" data-act="new">New habit <kbd>n</kbd></button>
+    </div>
+    <p id="summary" class="summary" hidden></p>
+    <ul id="habit-list" class="habits" aria-label="Habits"></ul>
+    <div id="no-match" class="empty" hidden><p>No habits match your search or filter.</p><button type="button" class="btn" id="clear-filters">Clear search and filter</button></div>
+  </section>
+
+  <section id="view-insights" data-view="insights" aria-labelledby="h-insights" hidden>
+    <div class="head"><h2 id="h-insights" tabindex="-1">Insights</h2></div>
+    <div id="insights-empty" class="empty" hidden><p>Add a habit and tick a few days to see charts here.</p><a class="btn primary" href="#/today">Go to Today</a></div>
+    <div id="insights-body">
+      <section class="card" aria-labelledby="h-bars"><h3 id="h-bars">Last 4 weeks</h3><p class="muted">Share of planned days you ticked, across all habits. Extra days over a weekly target do not count.</p><div id="bars"></div></section>
+      <section class="card" aria-labelledby="h-heat"><h3 id="h-heat">Last 8 weeks</h3><p class="muted">Each square is a day. The number is how many habits you ticked.</p><div id="heat"></div></section>
+      <section class="card" aria-labelledby="h-per"><h3 id="h-per">Per habit</h3><div class="tablewrap"><table id="per-habit"><thead><tr><th scope="col">Habit</th><th scope="col">Streak</th><th scope="col">Best</th><th scope="col">This week</th><th scope="col">Weeks on target</th></tr></thead><tbody></tbody></table></div></section>
+    </div>
+  </section>
+
+  <section id="view-settings" data-view="settings" aria-labelledby="h-settings" hidden>
+    <div class="head"><h2 id="h-settings" tabindex="-1">Settings</h2></div>
+    <p class="muted">Changes apply at once and are saved in this browser.</p>
+    <fieldset class="card"><legend>Theme</legend>
+      <label class="opt"><input type="radio" name="theme" value="system"> Follow my device</label>
+      <label class="opt"><input type="radio" name="theme" value="light"> Light</label>
+      <label class="opt"><input type="radio" name="theme" value="dark"> Dark</label>
+    </fieldset>
+    <fieldset class="card"><legend>Week starts on</legend>
+      <label class="opt"><input type="radio" name="weekStart" value="mon"> Monday</label>
+      <label class="opt"><input type="radio" name="weekStart" value="sun"> Sunday</label>
+    </fieldset>
+    <fieldset class="card"><legend>Motion</legend>
+      <label class="opt"><input type="radio" name="motion" value="system"> Follow my device</label>
+      <label class="opt"><input type="radio" name="motion" value="off"> Always off</label>
+    </fieldset>
+    <section class="card" aria-labelledby="h-data"><h3 id="h-data">Your data</h3>
+      <p class="muted">Stored only in this browser. There are no accounts, so a file is the only backup.</p>
+      <div class="row">
+        <button type="button" class="btn" id="export">Export JSON</button>
+        <button type="button" class="btn" id="import">Import JSON</button>
+        <input id="import-file" type="file" accept="application/json,.json" aria-label="Choose a JSON backup file to import" hidden>
+        <button type="button" class="btn" id="onboarding">Show onboarding again</button>
+        <button type="button" class="btn danger" id="reset">Reset all data</button>
+      </div>
+      <p id="data-msg" class="msg" role="status" tabindex="-1"></p>
+      <p id="data-err" class="msg err" role="alert" tabindex="-1"></p>
+    </section>
+  </section>
+
+  <section id="view-help" data-view="help" aria-labelledby="h-help" hidden>
+    <div class="head"><h2 id="h-help" tabindex="-1">Help</h2></div>
+    <div class="row"><button type="button" class="btn" data-act="shortcuts">Keyboard shortcuts <kbd>?</kbd></button><button type="button" class="btn" data-act="tour">Take the tour</button></div>
+    <h3>Questions</h3>
+    <div id="faq" class="faq"></div>
+  </section>
+
+  <section id="view-support" data-view="support" aria-labelledby="h-support" hidden>
+    <div class="head"><h2 id="h-support" tabindex="-1">Support</h2></div>
+    <p class="callout"><strong>Pocket Habits is a fictional sample.</strong> The address below does not exist, so no one will reply. These tools show how a support screen can work without collecting personal data.</p>
+    <section class="card" aria-labelledby="h-mail"><h3 id="h-mail">Email</h3>
+      <p>Sample address: <strong>support@example.test</strong></p>
+      <div class="row"><a class="btn" id="mailto" href="mailto:support@example.test?subject=Pocket%20Habits%20support">Write an email</a><button type="button" class="btn" id="copy-email">Copy support email</button></div>
+      <p id="copy-email-msg" class="msg" role="status"></p>
+      <p class="muted">The email body contains only the app version and your browser name.</p>
+    </section>
+    <section class="card" aria-labelledby="h-diag"><h3 id="h-diag">Diagnostics</h3>
+      <p class="muted">This is everything the button copies. It never includes habit names or dates.</p>
+      <pre id="diag" tabindex="0" aria-label="Diagnostics text"></pre>
+      <div class="row"><button type="button" class="btn" id="copy-diag">Copy diagnostics</button></div>
+      <p id="copy-diag-msg" class="msg" role="status"></p>
+    </section>
+  </section>
+
+  <section id="view-about" data-view="about" aria-labelledby="h-about" hidden>
+    <div class="head"><h2 id="h-about" tabindex="-1">About and privacy</h2></div>
+    <p class="callout"><strong>Fictional sample.</strong> Pocket Habits is an example web app made for the Lilac framework. It is not a real product or service. Names and starter habits are invented.</p>
+    <section class="card"><h3>What it is</h3><p>A small habit tracker. You add habits, tick the days you did them, and see streaks and weekly progress. Version <span id="about-version"></span>, data format <span id="about-schema"></span>.</p></section>
+    <section class="card"><h3>What is stored</h3><p>Your habits, the days you ticked, and your settings, in this browser's local storage. A saved copy of the app files is kept by the browser so it works offline.</p></section>
+    <section class="card"><h3>What is not collected</h3><p>No accounts, no analytics, no cookies, no advertising, no network requests to other sites, and no copy of your data on any server. The app has no backend.</p></section>
+    <section class="card"><h3>Your control</h3><p>Export a backup, import one, or erase everything from <a href="#/settings">Settings</a>. Clearing this site's data in your browser also erases it.</p></section>
+    <section class="card"><h3>Limits</h3><p>Anyone who can use this browser profile can see and change the data. Clearing browser data without exporting loses your habits. This is a demo and makes no claim about health or results.</p></section>
+  </section>
+</main>
+
+<footer class="site">
+  <p>Pocket Habits is a fictional sample app for the Lilac framework. Data stays in your browser. <button type="button" class="link" data-act="shortcuts">Keyboard shortcuts</button></p>
+</footer>
+
+<div id="live" class="sr" role="status" aria-live="polite"></div>
+<div id="toasts" class="toasts" role="region" aria-label="Notifications"></div>
+
+<dialog id="dlg-habit" aria-labelledby="dlg-habit-title">
+  <form id="habit-form" method="dialog" novalidate>
+    <h2 id="dlg-habit-title">New habit</h2>
+    <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" maxlength="60" autocomplete="off" aria-describedby="f-name-err" required><p id="f-name-err" class="err" role="alert"></p></div>
+    <div class="field"><label for="f-target">Weekly target</label><select id="f-target" name="target" aria-describedby="f-target-err"></select><p id="f-target-err" class="err" role="alert"></p></div>
+    <fieldset class="field"><legend>Colour</legend><div id="f-colors" class="colors" role="radiogroup"></div><p id="f-color-err" class="err" role="alert"></p></fieldset>
+    <div class="row end"><button type="button" class="btn" data-close>Cancel</button><button type="submit" class="btn primary" id="f-save">Add habit</button></div>
+  </form>
+</dialog>
+
+<dialog id="dlg-confirm" aria-labelledby="dlg-confirm-title" aria-describedby="dlg-confirm-text">
+  <h2 id="dlg-confirm-title">Are you sure?</h2><p id="dlg-confirm-text"></p>
+  <div class="row end"><button type="button" class="btn" data-close>Cancel</button><button type="button" class="btn danger" id="confirm-ok">OK</button></div>
+</dialog>
+
+<dialog id="dlg-shortcuts" aria-labelledby="dlg-sc-title">
+  <h2 id="dlg-sc-title">Keyboard shortcuts</h2>
+  <table><tbody>
+    <tr><th scope="row"><kbd>n</kbd></th><td>New habit</td></tr>
+    <tr><th scope="row"><kbd>j</kbd> / <kbd>k</kbd></th><td>Move to next / previous habit</td></tr>
+    <tr><th scope="row"><kbd>Space</kbd></th><td>Tick or untick today for the selected habit</td></tr>
+    <tr><th scope="row"><kbd>/</kbd></th><td>Search habits</td></tr>
+    <tr><th scope="row"><kbd>u</kbd></th><td>Undo the last delete</td></tr>
+    <tr><th scope="row"><kbd>?</kbd></th><td>Show this list</td></tr>
+    <tr><th scope="row"><kbd>Esc</kbd></th><td>Close a dialog</td></tr>
+  </tbody></table>
+  <p class="muted">Shortcuts work on the Today screen and never while you are typing.</p>
+  <div class="row end"><button type="button" class="btn primary" data-close>Close</button></div>
+</dialog>
+
+<dialog id="dlg-tour" aria-labelledby="tour-title">
+  <p class="muted" id="tour-step"></p><h2 id="tour-title"></h2><p id="tour-text"></p>
+  <div class="row end"><button type="button" class="btn ghost" id="tour-skip">Skip tour</button><button type="button" class="btn" id="tour-back">Back</button><button type="button" class="btn primary" id="tour-next">Next</button></div>
+</dialog>
+</body>
+</html>

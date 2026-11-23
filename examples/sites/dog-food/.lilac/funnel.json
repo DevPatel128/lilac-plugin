@@ -1,0 +1,31 @@
+{
+  "goal": "enquire",
+  "customer": "A visitor who wants to try the contact form of a fictional dog-food shop (fictional demo, no real customers)",
+  "entryPages": [
+    "index.html"
+  ],
+  "maxClicks": 3,
+  "goalPage": "contact.html",
+  "goalControl": {
+    "selector": "button[type=submit]",
+    "text": "Send (demo)"
+  },
+  "steps": [
+    {
+      "stage": "ready",
+      "page": "contact.html",
+      "control": {
+        "selector": "button[type=submit]",
+        "text": "Send (demo)"
+      }
+    }
+  ],
+  "confirmation": {
+    "page": "thanks.html",
+    "text": "nothing was sent"
+  },
+  "successMetric": {
+    "name": "UNKNOWN: a demo site has no real visitors",
+    "target": "OWNER FILLS THIS FROM REAL DATA"
+  }
+}

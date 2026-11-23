@@ -1,0 +1,4 @@
+# Fictional demo site. example.com is an ASSUMED placeholder host.
+User-agent: *
+Allow: /
+Sitemap: https://example.com/tasklane/sitemap.xml

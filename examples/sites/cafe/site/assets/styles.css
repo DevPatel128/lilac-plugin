@@ -1,0 +1,119 @@
+/* Corner Kiln (fictional demo). Tokens first; dark mode swaps tokens only. Motion: transform, opacity, stroke-dashoffset only. */
+:root{
+  --bg:#f6ecdc; --paper:#fbf5ea; --ink:#2b1d16; --muted:#5b4638; --line:#c9b49a;
+  --kiln:#b4421f; --kiln-ink:#fff8ee; --kiln-deep:#7a2a12; --flour:#e9d8bd; --today:#f1d9b5; --danger:#a31d16;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wob:255px 18px 225px 18px/18px 225px 18px 255px;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1c1411; --paper:#271b16; --ink:#f3e6d2; --muted:#cdb9a2; --line:#5d473a;
+  --kiln:#e8845a; --kiln-ink:#1c1411; --kiln-deep:#f0a27f; --flour:#3a2a22; --today:#4a3226; --danger:#ffb4ab;
+}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.65 var(--serif);overflow-x:hidden}
+img,svg{max-width:100%;height:auto}
+a{color:var(--kiln-deep);text-underline-offset:.2em;text-decoration-thickness:.08em}
+a:hover{text-decoration-thickness:.16em}
+:focus-visible{outline:3px solid var(--kiln);outline-offset:3px;border-radius:3px}
+.skip{position:absolute;left:.5rem;top:-4rem;background:var(--ink);color:var(--bg);padding:.6rem 1rem;z-index:10;border-radius:6px}
+.skip:focus{top:.5rem}
+.wrap{width:min(100% - 2rem,68rem);margin-inline:auto}
+h1,h2,h3,
+h1,h2,h2.h3{font-family:var(--serif);font-weight:700;line-height:1.1;margin:0 0 .6rem;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-style:italic;line-height:1.35}
+h2{font-size:clamp(1.7rem,4vw,2.6rem)}
+h3,
+h2.h3{font-size:1.3rem}
+p{margin:0 0 1rem;max-width:62ch}
+.eyebrow{font:600 .8rem/1 var(--sans);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:0 0 .8rem}
+.sample-bar{background:var(--ink);color:var(--bg);font:.85rem/1.4 var(--sans);text-align:center;padding:.45rem 1rem}
+header.site{border-bottom:2px dashed var(--line)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.5rem;padding:.9rem 0}
+.brand{min-height:44px;display:flex;align-items:center;gap:.6rem;font:700 1.5rem/1 var(--serif);color:var(--ink);text-decoration:none;font-style:italic}
+.brand svg{width:2rem;height:2rem}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.1rem .3rem}
+nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 .7rem;font:600 .95rem/1 var(--sans);color:var(--ink);text-decoration:none;border-radius:var(--wob)}
+nav a:hover{background:var(--flour)}
+nav a[aria-current=page]{background:var(--kiln);color:var(--kiln-ink)}
+main{display:block}
+section{padding:clamp(2.5rem,7vw,4.5rem) 0}
+.band{background:var(--flour)}
+.hero{display:grid;gap:2rem;align-items:center;padding:clamp(2rem,6vw,4rem) 0}
+.hero .art{max-width:20rem;margin-inline:auto;width:100%}
+@media(min-width:760px){.hero{grid-template-columns:1.3fr 1fr}}
+.lead{font-size:1.25rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 1.4rem;background:var(--kiln);color:var(--kiln-ink);font:700 1rem/1 var(--sans);text-decoration:none;border:2px solid var(--kiln);border-radius:var(--wob);cursor:pointer;transition:transform .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--ink)}
+.row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.2rem}
+.grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,17rem),1fr));list-style:none;margin:0;padding:0}
+.card{background:var(--paper);border:2px solid var(--ink);border-radius:var(--wob);padding:1.2rem 1.3rem;height:100%;transition:transform .25s ease}
+.card:hover{transform:translateY(-5px)}
+.item{display:flex;flex-direction:column}
+.item .top{display:flex;justify-content:space-between;gap:1rem;align-items:baseline}
+.item h3,
+.item h2.h3{margin:0}
+.price{font:700 1rem/1 var(--sans);white-space:nowrap;color:var(--kiln-deep)}
+.item p{margin:.5rem 0 0;color:var(--muted);font-size:1rem}
+.note{font:.9rem/1.5 var(--sans);color:var(--muted);border-left:4px solid var(--kiln);padding-left:.9rem;max-width:62ch}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem}
+.chip{min-height:44px;padding:0 1.1rem;font:600 .95rem/1 var(--sans);color:var(--ink);background:transparent;border:2px solid var(--ink);border-radius:var(--wob);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.js-only{display:none}
+.js .js-only{display:flex}
+.js .motion-btn.js-only{display:inline-flex}
+table{border-collapse:collapse;width:100%;max-width:34rem;font:1rem/1.4 var(--sans)}
+caption{text-align:left;font:700 1.3rem/1.2 var(--serif);padding-bottom:.6rem}
+th,td{text-align:left;padding:.75rem .6rem;border-bottom:1px dashed var(--line)}
+tr.today{background:var(--today);font-weight:700}
+.badge{position:relative;display:inline-block;margin-left:.6rem;padding:.15rem .6rem;font:700 .75rem/1.3 var(--sans);background:var(--kiln);color:var(--kiln-ink);border-radius:99px}
+.badge::after{content:"";position:absolute;inset:0;border-radius:99px;border:2px solid var(--kiln);opacity:0;animation:ring 1.4s ease-out 1}
+.two{display:grid;gap:2rem}
+@media(min-width:760px){.two{grid-template-columns:1fr 1fr}}
+form{display:grid;gap:1.1rem;max-width:36rem}
+label{font:600 .95rem/1.3 var(--sans);display:block;margin-bottom:.3rem}
+input,select,textarea{width:100%;min-height:48px;padding:.6rem .8rem;font:1rem/1.4 var(--sans);color:var(--ink);background:var(--paper);border:2px solid var(--muted);border-radius:8px}
+textarea{min-height:7rem}
+[aria-invalid=true]{border-color:var(--danger)}
+.err{font:.9rem/1.4 var(--sans);color:var(--danger);margin:.3rem 0 0;min-height:0}
+.ok{display:none;padding:1rem 1.2rem;border:2px solid var(--kiln);border-radius:var(--wob);background:var(--paper);font:1rem/1.5 var(--sans)}
+.ok.show{display:block}
+footer{border-top:2px dashed var(--line);padding:2rem 0 3rem;font:.95rem/1.6 var(--sans);color:var(--muted)}
+footer .cols{display:grid;gap:1.5rem}
+@media(min-width:760px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+footer p{margin:0 0 .5rem}
+.motion-btn{min-height:44px;padding:0 1rem;font:600 .9rem/1 var(--sans);background:transparent;color:var(--ink);border:2px solid var(--muted);border-radius:99px;cursor:pointer;align-items:center;margin-top:.8rem}
+.tag{display:inline-block;font:700 .75rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;background:var(--flour);padding:.35rem .6rem;border-radius:99px;margin-bottom:.7rem}
+/* hand-drawn underline */
+.draw{position:relative;display:inline-block;padding-bottom:.1em}
+.uline{position:absolute;left:0;right:0;bottom:0;height:.22em;pointer-events:none}
+.uline svg{display:block;width:100%;height:100%;overflow:visible}
+.uline path{fill:none;stroke:var(--kiln);stroke-width:4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:0}
+/* art */
+.art svg{display:block;width:100%}
+.steam path{fill:none;stroke:var(--muted);stroke-width:5;stroke-linecap:round;opacity:.6;transform-box:fill-box}
+.proof{transform-box:fill-box;transform-origin:50% 100%}
+/* motion: all gated on .js so content is visible without script */
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+@keyframes rise{0%{transform:translateY(10px);opacity:0}35%{opacity:.8}100%{transform:translateY(-22px);opacity:0}}
+@keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes ring{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.2);opacity:0}}
+.js body{animation:fadein .5s ease-out both}
+.js .reveal{opacity:0;transform:translateY(16px)}
+.js .reveal.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease;transition-delay:calc(var(--i,0) * 70ms)}
+.js .uline path{stroke-dashoffset:1}
+.js .draw.in .uline path{stroke-dashoffset:0;transition:stroke-dashoffset .5s ease .15s}
+.js:not(.paused) .steam path{animation:rise 4s ease-in-out infinite}
+.js:not(.paused) .steam path:nth-child(2){animation-delay:1.3s}
+.js:not(.paused) .steam path:nth-child(3){animation-delay:2.6s}
+.js:not(.paused) .proof{animation:breathe 6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .js .uline path{stroke-dashoffset:0}
+  .motion-btn{display:none!important}
+}
+@media print{.sample-bar,nav,.motion-btn{display:none}}

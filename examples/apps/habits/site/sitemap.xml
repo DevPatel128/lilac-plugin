@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- example.com is ASSUMED: replace with the real domain after hosting is chosen. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/pocket-habits/</loc></url>
+</urlset>

@@ -1,0 +1,9 @@
+// Static-assets Worker. Source: https://developers.cloudflare.com/workers/static-assets/
+// Not deployed. Deploying is the human's decision.
+{
+  "name": "tasklane-demo",
+  "compatibility_date": "2026-11-21",
+  "assets": {
+    "directory": "./site"
+  }
+}

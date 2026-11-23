@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Still Water: fictional sample site. example.com is a placeholder domain (ASSUMED). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://example.com/still-water/</loc></url>
+<url><loc>https://example.com/still-water/classes.html</loc></url>
+<url><loc>https://example.com/still-water/teachers.html</loc></url>
+<url><loc>https://example.com/still-water/memberships.html</loc></url>
+<url><loc>https://example.com/still-water/first-visit.html</loc></url>
+<url><loc>https://example.com/still-water/contact.html</loc></url>
+<url><loc>https://example.com/still-water/privacy.html</loc></url>
+</urlset>

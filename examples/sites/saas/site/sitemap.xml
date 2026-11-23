@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ASSUMED host: example.com is a placeholder for this fictional demo. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.com/tasklane/</loc></url>
+  <url><loc>https://example.com/tasklane/features.html</loc></url>
+  <url><loc>https://example.com/tasklane/pricing.html</loc></url>
+  <url><loc>https://example.com/tasklane/how-teams-use-it.html</loc></url>
+  <url><loc>https://example.com/tasklane/faq.html</loc></url>
+  <url><loc>https://example.com/tasklane/demo.html</loc></url>
+<url><loc>https://example.com/tasklane/privacy.html</loc></url>
+</urlset>

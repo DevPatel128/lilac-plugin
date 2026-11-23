@@ -1,0 +1,1981 @@
+{
+  "nodes": [
+    {
+      "id": "UX-0001",
+      "type": "principle",
+      "label": "Hidden navigation costs discovery",
+      "domain": "navigation",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0002",
+      "type": "principle",
+      "label": "Visible labels on navigation and icons",
+      "domain": "navigation",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0003",
+      "type": "pattern",
+      "label": "Tab bar moves between sections, not actions",
+      "domain": "navigation",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0004",
+      "type": "pattern",
+      "label": "Breadcrumbs show where you are",
+      "domain": "navigation",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0005",
+      "type": "pattern",
+      "label": "Mega menus for large catalogues only",
+      "domain": "navigation",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0006",
+      "type": "pattern",
+      "label": "Keep sticky headers small",
+      "domain": "navigation",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0007",
+      "type": "pattern",
+      "label": "Search is a visible box on every page",
+      "domain": "navigation",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0008",
+      "type": "pattern",
+      "label": "Skip link to main content",
+      "domain": "navigation",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0009",
+      "type": "principle",
+      "label": "Gestures never the only route",
+      "domain": "mobile",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0010",
+      "type": "principle",
+      "label": "Interrupt with modals and alerts sparingly",
+      "domain": "navigation",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0011",
+      "type": "pattern",
+      "label": "Sheets need a clear way out",
+      "domain": "mobile",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0012",
+      "type": "principle",
+      "label": "Design each device on its own terms",
+      "domain": "navigation",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0013",
+      "type": "pattern",
+      "label": "Visible label above every field",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0014",
+      "type": "principle",
+      "label": "Placeholder text is not a label",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0015",
+      "type": "principle",
+      "label": "Fewer fields, higher completion",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0016",
+      "type": "pattern",
+      "label": "One column, grouped fields",
+      "domain": "forms",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0017",
+      "type": "principle",
+      "label": "Validate after the field is done",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0018",
+      "type": "principle",
+      "label": "Error messages name the problem and the fix",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0019",
+      "type": "pattern",
+      "label": "Summarise errors and keep what was typed",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0020",
+      "type": "principle",
+      "label": "Colour alone never carries meaning",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0021",
+      "type": "pattern",
+      "label": "One question at a time for long journeys",
+      "domain": "forms",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0022",
+      "type": "pattern",
+      "label": "Review step before final submit",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0023",
+      "type": "principle",
+      "label": "Never ask for the same thing twice",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0024",
+      "type": "principle",
+      "label": "Let people paste and use password managers",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0025",
+      "type": "pattern",
+      "label": "Declare what each personal field is for",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0026",
+      "type": "pattern",
+      "label": "Match keyboard and input type to the data",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0027",
+      "type": "pattern",
+      "label": "Radios for one, checkboxes for many, no preselection",
+      "domain": "forms",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0028",
+      "type": "principle",
+      "label": "One obvious primary action per screen",
+      "domain": "conversion",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0029",
+      "type": "pattern",
+      "label": "Button labels say the action",
+      "domain": "conversion",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0030",
+      "type": "pattern",
+      "label": "Protect against double submission",
+      "domain": "forms",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0031",
+      "type": "principle",
+      "label": "Visible text is part of the accessible name",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0032",
+      "type": "pattern",
+      "label": "Size inputs to the expected answer",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0033",
+      "type": "principle",
+      "label": "People skim in an F shape",
+      "domain": "content",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0034",
+      "type": "principle",
+      "label": "Most words on a page go unread",
+      "domain": "content",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0035",
+      "type": "principle",
+      "label": "Headings say what the section holds",
+      "domain": "content",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0036",
+      "type": "principle",
+      "label": "Show core options first, advanced on request",
+      "domain": "content",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0037",
+      "type": "pattern",
+      "label": "Accordions only for optional content",
+      "domain": "content",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0038",
+      "type": "principle",
+      "label": "Clickable things must look clickable",
+      "domain": "content",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0039",
+      "type": "pattern",
+      "label": "Empty states explain and offer a next step",
+      "domain": "support",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0040",
+      "type": "principle",
+      "label": "Never hide essential information in a tooltip",
+      "domain": "content",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0041",
+      "type": "pattern",
+      "label": "Confirm what happens next",
+      "domain": "conversion",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0042",
+      "type": "pattern",
+      "label": "Start page that sets expectations",
+      "domain": "conversion",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0043",
+      "type": "principle",
+      "label": "Targets at least 24 by 24 CSS pixels",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0044",
+      "type": "principle",
+      "label": "Aim for 44 to 48 on touch, 24 is a floor",
+      "domain": "mobile",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0045",
+      "type": "principle",
+      "label": "Space between touch targets",
+      "domain": "mobile",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0046",
+      "type": "principle",
+      "label": "Text contrast 4.5 to 1, large text 3 to 1",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0047",
+      "type": "principle",
+      "label": "Most home pages fail basic checks",
+      "domain": "accessibility",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0048",
+      "type": "principle",
+      "label": "Keyboard focus is always visible",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0049",
+      "type": "principle",
+      "label": "Sticky bars must not hide the focused item",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0050",
+      "type": "principle",
+      "label": "Everything works with the keyboard alone",
+      "domain": "accessibility",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0051",
+      "type": "principle",
+      "label": "Focus never gets stuck",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0052",
+      "type": "pattern",
+      "label": "Dialogs move, hold and return focus",
+      "domain": "accessibility",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0053",
+      "type": "pattern",
+      "label": "Tabs use arrow keys inside, Tab to leave",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0054",
+      "type": "pattern",
+      "label": "Accordion headers are buttons with state",
+      "domain": "accessibility",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0055",
+      "type": "principle",
+      "label": "Prefer native elements over ARIA",
+      "domain": "accessibility",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0056",
+      "type": "principle",
+      "label": "Images carry text alternatives",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0057",
+      "type": "principle",
+      "label": "Every control has a name",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0058",
+      "type": "principle",
+      "label": "Content reflows at 320 px wide",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0059",
+      "type": "principle",
+      "label": "Text can grow to 200 percent and more",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0060",
+      "type": "pattern",
+      "label": "Support system text size on phones",
+      "domain": "mobile",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0061",
+      "type": "principle",
+      "label": "Announce results without moving focus",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0062",
+      "type": "principle",
+      "label": "Moving content can be paused",
+      "domain": "motion",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0063",
+      "type": "principle",
+      "label": "Dragging has a click alternative",
+      "domain": "accessibility",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0064",
+      "type": "principle",
+      "label": "Time limits can be extended",
+      "domain": "accessibility",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0065",
+      "type": "principle",
+      "label": "Honour the reduce-motion setting",
+      "domain": "motion",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0066",
+      "type": "principle",
+      "label": "Motion must earn its place",
+      "domain": "motion",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0067",
+      "type": "pattern",
+      "label": "Animate transform and opacity",
+      "domain": "motion",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0068",
+      "type": "pattern",
+      "label": "Ask for permissions at the moment of need",
+      "domain": "mobile",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0069",
+      "type": "pattern",
+      "label": "Keep onboarding short and skippable",
+      "domain": "mobile",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0070",
+      "type": "pattern",
+      "label": "Destructive actions never styled as primary",
+      "domain": "mobile",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0071",
+      "type": "principle",
+      "label": "Main content within 2.5 seconds",
+      "domain": "performance",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0072",
+      "type": "pattern",
+      "label": "Do not lazy-load the main image",
+      "domain": "performance",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0073",
+      "type": "principle",
+      "label": "Respond to input within 200 ms",
+      "domain": "performance",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0074",
+      "type": "principle",
+      "label": "Layout stays still while loading",
+      "domain": "performance",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0075",
+      "type": "principle",
+      "label": "Three response-time limits",
+      "domain": "performance",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0076",
+      "type": "principle",
+      "label": "Always show system status",
+      "domain": "performance",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0077",
+      "type": "principle",
+      "label": "Speed gains are tied to sales",
+      "domain": "conversion",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0078",
+      "type": "principle",
+      "label": "Hidden costs and forced accounts drive abandonment",
+      "domain": "conversion",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0079",
+      "type": "pattern",
+      "label": "Guest checkout and late account creation",
+      "domain": "conversion",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0080",
+      "type": "principle",
+      "label": "Show prices, fees and contact early",
+      "domain": "trust",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0081",
+      "type": "principle",
+      "label": "Fewer simultaneous choices decide faster",
+      "domain": "conversion",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0082",
+      "type": "principle",
+      "label": "Chunk content; seven is not a menu rule",
+      "domain": "content",
+      "confidence": "low"
+    },
+    {
+      "id": "UX-0083",
+      "type": "principle",
+      "label": "Bigger, nearer targets are faster to hit",
+      "domain": "mobile",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0084",
+      "type": "principle",
+      "label": "Offer a clear way out",
+      "domain": "support",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0085",
+      "type": "principle",
+      "label": "Prevent errors before messaging them",
+      "domain": "forms",
+      "confidence": "high"
+    },
+    {
+      "id": "UX-0086",
+      "type": "principle",
+      "label": "Show options instead of making people remember",
+      "domain": "content",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0087",
+      "type": "principle",
+      "label": "Help sits where the question arises",
+      "domain": "support",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0088",
+      "type": "pattern",
+      "label": "One obvious support entry point",
+      "domain": "support",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0089",
+      "type": "principle",
+      "label": "Follow familiar conventions",
+      "domain": "support",
+      "confidence": "medium"
+    },
+    {
+      "id": "UX-0090",
+      "type": "pattern",
+      "label": "Service problems get their own page",
+      "domain": "support",
+      "confidence": "low"
+    },
+    {
+      "id": "check:controls-test:dead-control",
+      "type": "check",
+      "label": "controls-test:dead-control"
+    },
+    {
+      "id": "check:persona-test:completion",
+      "type": "check",
+      "label": "persona-test:completion"
+    },
+    {
+      "id": "check:persona-test:impatient",
+      "type": "check",
+      "label": "persona-test:impatient"
+    },
+    {
+      "id": "check:persona-test:keyboard",
+      "type": "check",
+      "label": "persona-test:keyboard"
+    },
+    {
+      "id": "check:persona-test:low-vision",
+      "type": "check",
+      "label": "persona-test:low-vision"
+    },
+    {
+      "id": "check:persona-test:mobile-3g",
+      "type": "check",
+      "label": "persona-test:mobile-3g"
+    },
+    {
+      "id": "check:persona-test:skimmer",
+      "type": "check",
+      "label": "persona-test:skimmer"
+    },
+    {
+      "id": "check:persona-test:steps",
+      "type": "check",
+      "label": "persona-test:steps"
+    },
+    {
+      "id": "check:qa-browser:focus-invisible",
+      "type": "check",
+      "label": "qa-browser:focus-invisible"
+    },
+    {
+      "id": "check:qa-browser:focus-order",
+      "type": "check",
+      "label": "qa-browser:focus-order"
+    },
+    {
+      "id": "check:qa-browser:focus-trap",
+      "type": "check",
+      "label": "qa-browser:focus-trap"
+    },
+    {
+      "id": "check:qa-browser:overflow",
+      "type": "check",
+      "label": "qa-browser:overflow"
+    },
+    {
+      "id": "check:qa-browser:reduced-motion",
+      "type": "check",
+      "label": "qa-browser:reduced-motion"
+    },
+    {
+      "id": "check:qa-browser:skip-link",
+      "type": "check",
+      "label": "qa-browser:skip-link"
+    },
+    {
+      "id": "check:qa-browser:tap-target",
+      "type": "check",
+      "label": "qa-browser:tap-target"
+    },
+    {
+      "id": "check:qa:contrast",
+      "type": "check",
+      "label": "qa:contrast"
+    },
+    {
+      "id": "check:qa:form-label",
+      "type": "check",
+      "label": "qa:form-label"
+    },
+    {
+      "id": "check:qa:heading-order",
+      "type": "check",
+      "label": "qa:heading-order"
+    },
+    {
+      "id": "check:qa:img-alt",
+      "type": "check",
+      "label": "qa:img-alt"
+    },
+    {
+      "id": "check:qa:img-size",
+      "type": "check",
+      "label": "qa:img-size"
+    },
+    {
+      "id": "check:qa:infinite-animation",
+      "type": "check",
+      "label": "qa:infinite-animation"
+    },
+    {
+      "id": "check:qa:layout-animation",
+      "type": "check",
+      "label": "qa:layout-animation"
+    },
+    {
+      "id": "check:qa:link-empty",
+      "type": "check",
+      "label": "qa:link-empty"
+    },
+    {
+      "id": "skill:controls-test",
+      "type": "skill",
+      "label": "controls-test"
+    },
+    {
+      "id": "skill:persona-test",
+      "type": "skill",
+      "label": "persona-test"
+    },
+    {
+      "id": "skill:qa",
+      "type": "skill",
+      "label": "qa"
+    },
+    {
+      "id": "skill:ux-review",
+      "type": "skill",
+      "label": "ux-review"
+    }
+  ],
+  "edges": [
+    {
+      "from": "UX-0001",
+      "to": "UX-0002",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0001",
+      "to": "UX-0012",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0001",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0002",
+      "to": "UX-0001",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0002",
+      "to": "UX-0003",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0002",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0003",
+      "to": "UX-0002",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0003",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0004",
+      "to": "UX-0008",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0004",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0005",
+      "to": "UX-0001",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0005",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0006",
+      "to": "UX-0049",
+      "type": "conflicts_with"
+    },
+    {
+      "from": "UX-0006",
+      "to": "UX-0049",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0006",
+      "to": "UX-0058",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0006",
+      "to": "check:qa-browser:focus-order",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0007",
+      "to": "UX-0086",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0007",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0008",
+      "to": "UX-0048",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0008",
+      "to": "UX-0050",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0008",
+      "to": "check:qa-browser:skip-link",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0009",
+      "to": "UX-0063",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0009",
+      "to": "check:controls-test:dead-control",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0010",
+      "to": "UX-0052",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0010",
+      "to": "UX-0084",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0010",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0011",
+      "to": "UX-0010",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0011",
+      "to": "UX-0084",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0011",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0012",
+      "to": "UX-0001",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0012",
+      "to": "check:qa-browser:overflow",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0013",
+      "to": "UX-0014",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0013",
+      "to": "UX-0031",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0013",
+      "to": "check:qa:form-label",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0014",
+      "to": "UX-0013",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0014",
+      "to": "check:qa:form-label",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0015",
+      "to": "UX-0022",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0015",
+      "to": "UX-0079",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0015",
+      "to": "check:persona-test:steps",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0016",
+      "to": "UX-0013",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0016",
+      "to": "check:persona-test:keyboard",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0017",
+      "to": "UX-0018",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0017",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0018",
+      "to": "UX-0019",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0018",
+      "to": "UX-0020",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0018",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0019",
+      "to": "UX-0018",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0019",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0020",
+      "to": "UX-0018",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0020",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0021",
+      "to": "UX-0015",
+      "type": "conflicts_with"
+    },
+    {
+      "from": "UX-0021",
+      "to": "UX-0022",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0021",
+      "to": "check:persona-test:steps",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0022",
+      "to": "UX-0084",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0022",
+      "to": "UX-0085",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0022",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0023",
+      "to": "UX-0015",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0023",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0024",
+      "to": "UX-0025",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0024",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0025",
+      "to": "UX-0024",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0025",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0026",
+      "to": "UX-0013",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0026",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0027",
+      "to": "UX-0086",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0027",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0028",
+      "to": "UX-0029",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0028",
+      "to": "UX-0070",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0028",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0029",
+      "to": "UX-0028",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0029",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0030",
+      "to": "UX-0076",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0030",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0031",
+      "to": "UX-0013",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0031",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0032",
+      "to": "UX-0013",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0032",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0033",
+      "to": "UX-0034",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0033",
+      "to": "check:persona-test:skimmer",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0034",
+      "to": "UX-0033",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0034",
+      "to": "check:persona-test:skimmer",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0035",
+      "to": "UX-0033",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0035",
+      "to": "check:qa:heading-order",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0036",
+      "to": "UX-0001",
+      "type": "conflicts_with"
+    },
+    {
+      "from": "UX-0036",
+      "to": "UX-0037",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0036",
+      "to": "UX-0086",
+      "type": "conflicts_with"
+    },
+    {
+      "from": "UX-0036",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0037",
+      "to": "UX-0036",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0037",
+      "to": "UX-0054",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0037",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0038",
+      "to": "UX-0002",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0038",
+      "to": "check:controls-test:dead-control",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0039",
+      "to": "UX-0076",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0039",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0040",
+      "to": "UX-0087",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0040",
+      "to": "check:persona-test:keyboard",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0041",
+      "to": "UX-0088",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0041",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0042",
+      "to": "UX-0028",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0042",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0043",
+      "to": "UX-0044",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0043",
+      "to": "UX-0045",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0043",
+      "to": "check:qa-browser:tap-target",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0044",
+      "to": "UX-0043",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0044",
+      "to": "UX-0045",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0044",
+      "to": "UX-0083",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0044",
+      "to": "check:qa-browser:tap-target",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0045",
+      "to": "UX-0044",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0045",
+      "to": "check:qa-browser:tap-target",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0046",
+      "to": "UX-0047",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0046",
+      "to": "check:qa:contrast",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0047",
+      "to": "UX-0046",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0047",
+      "to": "UX-0056",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0047",
+      "to": "UX-0057",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0047",
+      "to": "check:qa:img-alt",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0048",
+      "to": "UX-0049",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0048",
+      "to": "UX-0050",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0048",
+      "to": "check:qa-browser:focus-invisible",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0049",
+      "to": "UX-0006",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0049",
+      "to": "UX-0048",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0049",
+      "to": "check:persona-test:keyboard",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0050",
+      "to": "UX-0008",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0050",
+      "to": "UX-0048",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0050",
+      "to": "UX-0051",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0050",
+      "to": "check:persona-test:keyboard",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0051",
+      "to": "UX-0052",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0051",
+      "to": "check:qa-browser:focus-trap",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0052",
+      "to": "UX-0010",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0052",
+      "to": "UX-0051",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0052",
+      "to": "check:persona-test:keyboard",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0053",
+      "to": "UX-0050",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0053",
+      "to": "check:persona-test:keyboard",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0054",
+      "to": "UX-0037",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0054",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0055",
+      "to": "UX-0050",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0055",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0056",
+      "to": "UX-0047",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0056",
+      "to": "check:qa:img-alt",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0057",
+      "to": "UX-0031",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0057",
+      "to": "UX-0056",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0057",
+      "to": "check:qa:link-empty",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0058",
+      "to": "UX-0006",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0058",
+      "to": "UX-0059",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0058",
+      "to": "check:qa-browser:overflow",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0059",
+      "to": "UX-0058",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0059",
+      "to": "check:persona-test:low-vision",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0060",
+      "to": "UX-0059",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0060",
+      "to": "check:persona-test:low-vision",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0061",
+      "to": "UX-0076",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0061",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0062",
+      "to": "UX-0065",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0062",
+      "to": "check:qa:infinite-animation",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0063",
+      "to": "UX-0009",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0063",
+      "to": "check:controls-test:dead-control",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0064",
+      "to": "UX-0084",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0064",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0065",
+      "to": "UX-0066",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0065",
+      "to": "UX-0067",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0065",
+      "to": "check:qa-browser:reduced-motion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0066",
+      "to": "UX-0065",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0066",
+      "to": "check:qa:infinite-animation",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0067",
+      "to": "UX-0074",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0067",
+      "to": "check:qa:layout-animation",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0068",
+      "to": "UX-0069",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0068",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0069",
+      "to": "UX-0087",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0069",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0070",
+      "to": "UX-0028",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0070",
+      "to": "UX-0084",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0070",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0071",
+      "to": "UX-0072",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0071",
+      "to": "UX-0077",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0071",
+      "to": "check:persona-test:mobile-3g",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0072",
+      "to": "UX-0071",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0072",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0073",
+      "to": "UX-0075",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0073",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0074",
+      "to": "UX-0067",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0074",
+      "to": "check:qa:img-size",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0075",
+      "to": "UX-0073",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0075",
+      "to": "UX-0076",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0075",
+      "to": "check:persona-test:impatient",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0076",
+      "to": "UX-0039",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0076",
+      "to": "UX-0075",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0076",
+      "to": "check:persona-test:impatient",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0077",
+      "to": "UX-0071",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0077",
+      "to": "check:persona-test:mobile-3g",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0078",
+      "to": "UX-0079",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0078",
+      "to": "UX-0080",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0078",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0079",
+      "to": "UX-0015",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0079",
+      "to": "UX-0078",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0079",
+      "to": "check:persona-test:steps",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0080",
+      "to": "UX-0078",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0080",
+      "to": "UX-0088",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0080",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0081",
+      "to": "UX-0028",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0081",
+      "to": "UX-0082",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0081",
+      "to": "check:persona-test:steps",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0082",
+      "to": "UX-0081",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0082",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0083",
+      "to": "UX-0044",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0083",
+      "to": "check:qa-browser:tap-target",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0084",
+      "to": "UX-0011",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0084",
+      "to": "UX-0022",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0084",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0085",
+      "to": "UX-0022",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0085",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0086",
+      "to": "UX-0001",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0086",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0087",
+      "to": "UX-0088",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0087",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0088",
+      "to": "UX-0041",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0088",
+      "to": "UX-0080",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0088",
+      "to": "check:persona-test:completion",
+      "type": "measured_by"
+    },
+    {
+      "from": "UX-0089",
+      "to": "UX-0002",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0089",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "UX-0090",
+      "to": "UX-0018",
+      "type": "supports"
+    },
+    {
+      "from": "UX-0090",
+      "to": "skill:ux-review",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:controls-test:dead-control",
+      "to": "skill:controls-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:persona-test:completion",
+      "to": "skill:persona-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:persona-test:impatient",
+      "to": "skill:persona-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:persona-test:keyboard",
+      "to": "skill:persona-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:persona-test:low-vision",
+      "to": "skill:persona-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:persona-test:mobile-3g",
+      "to": "skill:persona-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:persona-test:skimmer",
+      "to": "skill:persona-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:persona-test:steps",
+      "to": "skill:persona-test",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa-browser:focus-invisible",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa-browser:focus-order",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa-browser:focus-trap",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa-browser:overflow",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa-browser:reduced-motion",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa-browser:skip-link",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa-browser:tap-target",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:contrast",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:form-label",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:heading-order",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:img-alt",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:img-size",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:infinite-animation",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:layout-animation",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    },
+    {
+      "from": "check:qa:link-empty",
+      "to": "skill:qa",
+      "type": "implemented_by"
+    }
+  ]
+}

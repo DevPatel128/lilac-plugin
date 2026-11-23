@@ -1,0 +1,24 @@
+# Lilac page-weight budget on pull requests. Copy to .github/workflows/lilac-perf.yml yourself; hosting.mjs does not copy it.
+# STATUS: NOT yet run on GitHub. UNVERIFIED until this workflow has been pushed and a run has passed.
+# It reads the repository only (no live site, no secrets) and fails the pull request when a page is over the budget in .lilac/budget.json
+# (default 300 KB per page). The Chrome step estimates LCP, CLS and INP when Chrome exists on the runner; otherwise it prints SKIPPED, not a pass.
+# Needs scripts/monitor.mjs in the project (copy it from the Lilac plugin).
+# Action majors verified 2026-11-21 from the official release pages:
+#   actions/checkout v7 (latest v7.0.1)  https://github.com/actions/checkout/releases/latest
+#   actions/setup-node v7 (latest v7.1.0) https://github.com/actions/setup-node/releases/latest
+name: lilac-perf
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  budget:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Page budget
+        if: ${{ hashFiles('scripts/monitor.mjs') != '' }}
+        run: node scripts/monitor.mjs budget .

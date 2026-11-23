@@ -1,0 +1,69 @@
+# CI for the PUBLIC Lilac plugin repository. Runs the plugin's own quality gates on macOS, Linux and Windows.
+# Actions versions checked on the actions' GitHub releases (checkout v7.0.1, setup-node v7.1.0). No secrets, no deploy, read-only.
+name: ci
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+defaults:
+  run:
+    shell: bash
+jobs:
+  gates:
+    name: gates (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Doctor (Node, plugin files)
+        run: node scripts/doctor.mjs
+      - name: Always-loaded token budget
+        run: node scripts/ci/token-cost.mjs . --budget 4000
+      - name: No dead relative links
+        run: node scripts/ci/plugin-links-check.mjs .
+      - name: Network use is allowlisted with reasons
+        run: node scripts/ci/network-check.mjs . --allow scripts/ci/network-allowlist.txt
+      - name: Pocket Habits unit tests
+        run: node --test "examples/apps/habits/tests/*.test.js"
+      - name: Static QA on every example
+        run: |
+          for d in examples/sites/*/ examples/apps/*/; do
+            [ -d "$d/site" ] || continue
+            echo "== $d"; node scripts/qa.mjs "$d"
+          done
+      - name: Tech docs are current on every example
+        run: |
+          for d in examples/sites/*/ examples/apps/*/; do
+            [ -d "$d/site" ] || continue
+            echo "== $d"; node scripts/techdocs.mjs "$d" --check
+          done
+  browser:
+    name: browser checks (ubuntu)
+    runs-on: ubuntu-latest
+    needs: gates
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Browser QA and controls on every example
+        run: |
+          for d in examples/sites/*/ examples/apps/*/; do
+            [ -d "$d/site" ] || continue
+            echo "== $d"
+            node scripts/qa-browser.mjs "$d"
+            node scripts/controls-test.mjs "$d"
+          done
+      - name: Simulated visitors (20 per example)
+        run: |
+          for d in examples/sites/*/ examples/apps/*/; do
+            [ -d "$d/site" ] || continue
+            echo "== $d"; node scripts/persona-test.mjs "$d" --visitors 20 --seed 7
+          done

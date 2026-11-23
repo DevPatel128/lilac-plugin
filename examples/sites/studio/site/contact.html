@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- Atelier Nord: FICTIONAL SAMPLE studio built to demo Lilac's website track. Not a real firm. Plain HTML/CSS/JS, no external requests. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enquire: Atelier Nord (fictional sample)</title>
+<meta name="description" content="A demo enquiry form for a fictional studio. It validates your answers; nothing is sent.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://example.com/atelier-nord/contact.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atelier Nord (fictional sample)">
+<meta property="og:title" content="Enquire: Atelier Nord (fictional sample)">
+<meta property="og:description" content="A demo enquiry form for a fictional studio. It validates your answers; nothing is sent.">
+<meta property="og:url" content="https://example.com/atelier-nord/contact.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.classList.add("js");setTimeout(function(){if(!window.__ok)document.documentElement.classList.remove("js")},2500)</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="top"><div class="wrap bar">
+<a class="brand" href="index.html" aria-label="Atelier Nord, home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V3h4l10 14V3h4v18h-4L7 7v14z" fill="currentColor"/></svg><span>Atelier Nord</span></a>
+<nav aria-label="Main"><ul><li><a class="u" href="projects.html">Projects</a></li><li><a class="u" href="approach.html">Approach</a></li><li><a class="u" href="journal.html">Journal</a></li><li><a class="u" href="contact.html" aria-current="page">Enquire</a></li></ul></nav>
+</div></header>
+<main id="main" tabindex="-1">
+
+<section class="wrap pagehead g">
+<p class="eyebrow c-1-13">Enquire</p>
+<h1 class="c-1-10">Tell us about the room.</h1>
+<p class="c-1-6 rise lede">This studio is fictional, so this form is a demo. It checks your answers in the browser and then tells you nothing was sent.</p>
+</section>
+<section class="wrap g sec">
+<!-- demo only: a real site posts to a server. Only non-sensitive fields have a name attribute, so name, email and message text are never put in the URL. -->
+<form id="f" class="c-1-8 form" method="get" action="thanks.html" aria-describedby="demo-note"><noscript><p class="k"><strong>Demo form.</strong> JavaScript is off, and the form still works: it opens a thank-you page. Nothing is sent or stored.</p></noscript>
+<p id="demo-note" class="k">Demo: nothing is sent, stored or shared. Do not enter real personal data. <a href="privacy.html">Privacy note</a>: this demo collects no data.</p>
+<div class="field"><label for="n">Name</label><input id="n" autocomplete="name" required aria-describedby="n-e"><p class="err" id="n-e"></p></div>
+<div class="field"><label for="e">Email</label><input id="e" type="email" autocomplete="email" required aria-describedby="e-e"><p class="err" id="e-e"></p></div>
+<div class="field"><label for="t">Project type</label><select id="t" name="type" required aria-describedby="t-e"><option value="">Choose one</option><option>Residential</option><option>Public</option><option>Interiors</option><option>Something else</option></select><p class="err" id="t-e"></p></div>
+<div class="field"><label for="m">About the project</label><textarea id="m" rows="6" required minlength="10" aria-describedby="m-e"></textarea><p class="err" id="m-e"></p></div>
+<button class="btn" type="submit">Send enquiry (demo)</button>
+<p id="sent" class="sent" role="status" tabindex="-1"></p>
+</form>
+<aside class="c-9-13 prose"><h2 class="h3">What happens next</h2><p>SAMPLE text. In a real studio a reply time would go here. This demo makes no such promise, and has no email address, phone number or street address.</p></aside>
+</section>
+</main>
+<footer class="foot"><div class="wrap g">
+<p class="c-1-7">Atelier Nord is a <strong>fictional</strong> studio made for the Lilac demo. Every person, project, place and sentence here is SAMPLE text. No real clients, buildings, addresses, awards, press, licences or professional registrations are claimed.</p>
+<ul class="c-8-13 flinks"><li><a class="u" href="projects.html">Projects</a></li><li><a class="u" href="approach.html">Approach</a></li><li><a class="u" href="journal.html">Journal</a></li><li><a class="u" href="contact.html">Enquire</a></li></ul>
+</div></footer>
+<script src="assets/main.js" defer></script>
+</body>
+</html>

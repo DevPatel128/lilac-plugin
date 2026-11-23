@@ -1,0 +1,27 @@
+PASS: tour @360px: card, Next and Skip inside the viewport, not covered, Next height 44 px, focus starts on tour-next
+PASS: tour @360px: Back appears on step 2 (Step 2 of 5) and is clickable
+PASS: tour @360px: Back returns to step 1
+PASS: tour @360px: Tab cycles inside the dialog through tour-skip, tour-next, 
+PASS: tour @360px: stepping Next to Done closes it and remembers it
+PASS: tour @768px: card, Next and Skip inside the viewport, not covered, Next height 44 px, focus starts on tour-next
+PASS: tour @768px: Back appears on step 2 (Step 2 of 5) and is clickable
+PASS: tour @768px: Back returns to step 1
+PASS: tour @768px: Tab cycles inside the dialog through , tour-skip, tour-next
+PASS: tour @768px: stepping Next to Done closes it and remembers it
+PASS: tour @1280px: card, Next and Skip inside the viewport, not covered, Next height 44 px, focus starts on tour-next
+PASS: tour @1280px: Back appears on step 2 (Step 2 of 5) and is clickable
+PASS: tour @1280px: Back returns to step 1
+PASS: tour @1280px: Tab cycles inside the dialog through tour-skip, tour-next, 
+PASS: tour @1280px: stepping Next to Done closes it and remembers it
+PASS: search "zzzz-no-match": list empty and the no-match panel with "Clear search and filter" is shown (3 habits before)
+PASS: Clear search and filter restores all habits, empties the box and hides the panel
+PASS: Reset opens the confirm dialog whose action button says "Erase everything"
+PASS: Cancel closes the dialog and erases nothing
+PASS: Erase everything deletes all habits
+PASS: Delete shows a toast with an Undo button
+PASS: Undo restores the deleted habit
+PASS: service worker v-current active
+PASS: update bar hidden while no new version exists
+PASS: a new version waiting shows the bar with "Reload to update"
+PASS: Reload to update activates the new version, the page reloads and the bar is gone
+state-checks: 0 failure(s)

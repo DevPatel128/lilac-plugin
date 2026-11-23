@@ -1,0 +1,42 @@
+{
+  "tasks": [
+    {
+      "name": "add a habit",
+      "startPage": "/",
+      "steps": [
+        { "click": "Add your first habit" },
+        { "type": "Name", "text": "Water plants" },
+        { "click": "Add habit" },
+        { "expectText": "0 of 1 done today" }
+      ]
+    },
+    {
+      "name": "mark it done and see the streak",
+      "startPage": "/",
+      "steps": [
+        { "click": "Add your first habit" },
+        { "type": "Name", "text": "Water plants" },
+        { "click": "Add habit" },
+        { "click": "Water plants, today" },
+        { "expectText": "1 of 1 done today" },
+        { "expectText": "Streak 1 day" }
+      ]
+    },
+    {
+      "name": "export my data",
+      "startPage": "/#/settings",
+      "steps": [
+        { "click": "Export JSON" },
+        { "expectText": "Exported 0 habits" }
+      ]
+    },
+    {
+      "name": "find help and read an answer",
+      "startPage": "/#/help",
+      "steps": [
+        { "click": "Where is my data stored?" },
+        { "expectText": "Only in this browser" }
+      ]
+    }
+  ]
+}

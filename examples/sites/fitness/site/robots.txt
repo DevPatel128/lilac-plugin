@@ -1,0 +1,4 @@
+# Still Water: fictional sample site (placeholder domain)
+User-agent: *
+Allow: /
+Sitemap: https://example.com/still-water/sitemap.xml

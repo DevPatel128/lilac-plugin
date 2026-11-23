@@ -1,0 +1,104 @@
+<!doctype html>
+<!-- Biscuit & Bowl: FICTIONAL SAMPLE site built to demo Lilac's website track. Not a real company. Plain HTML/CSS/JS, no external requests. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products | Biscuit & Bowl (sample)</title>
+<meta name="description" content="Six sample dog-food products with life stage, bag size, price in sample currency and sample ingredient lists. Filter and build a plan.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://example.com/biscuit-and-bowl/products.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biscuit &amp; Bowl (sample)">
+<meta property="og:title" content="Products | Biscuit & Bowl (sample)">
+<meta property="og:description" content="Six sample dog-food products with life stage, bag size, price in sample currency and sample ingredient lists. Filter and build a plan.">
+<meta property="og:url" content="https://example.com/biscuit-and-bowl/products.html">
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html"><svg class="ico" viewBox="0 0 48 48" aria-hidden="true"><ellipse cx="14" cy="20" rx="5" ry="7"/><ellipse cx="24" cy="13" rx="5" ry="7"/><ellipse cx="34" cy="20" rx="5" ry="7"/><path d="M24 26c-8 0-13 7-13 12 0 4 4 5 8 4 3-1 7-1 10 0 4 1 8 0 8-4 0-5-5-12-13-12z"/></svg><span>Biscuit <em>&amp;</em> Bowl</span></a>
+<nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="products.html" aria-current="page">Products</a></li><li><a href="how-it-works.html">How it works</a></li><li><a href="ingredients.html">Ingredients</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+
+<section class="wrap pagehead"><h1>Six sample products</h1>
+<p class="lead">Life stage, bag size, sample price and a sample ingredient list for each. Nothing here is for sale.</p></section>
+<section class="wrap plan" id="plan" aria-labelledby="plan-h">
+<h2 id="plan-h">Choose a plan</h2>
+<p class="nojs-note">Without JavaScript, all six products are shown below and the plan builder is off. The list still reads fine.</p>
+<div class="js-only">
+<div class="filters" role="group" aria-label="Filter by life stage">
+<button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+<button type="button" class="chip" data-filter="puppy" aria-pressed="false">Puppy</button>
+<button type="button" class="chip" data-filter="adult" aria-pressed="false">Adult</button>
+<button type="button" class="chip" data-filter="senior" aria-pressed="false">Senior</button>
+</div>
+<p id="count" class="small" role="status" aria-live="polite">Showing 6 of 6 products.</p>
+<p class="small plan-line"><span id="plan-line">Your plan: nothing chosen yet.</span> <a href="#sum-h">Go to your plan</a></p>
+</div>
+<div class="plan-grid">
+<ul class="products" id="list"><li class="product" id="pup-crumble" data-id="pup-crumble" data-name="Pup Crumble" data-stage="puppy" data-price="11.00">
+<span class="tag">Puppy</span>
+<h3>Pup Crumble</h3>
+<dl><div><dt>Life stage</dt><dd>Puppy</dd></div><div><dt>Bag size</dt><dd>2 kg</dd></div><div><dt>Price</dt><dd>BB$ 11.00 <small>(sample currency)</small></dd></div></dl>
+<p class="ing"><strong>Ingredients (sample text):</strong> Chicken, rice, oats, pumpkin, sunflower oil, dried parsley.</p>
+<button type="button" class="btn ghost small js-only" data-add aria-pressed="false">Add to plan</button>
+</li><li class="product" id="small-scoops" data-id="small-scoops" data-name="Small Scoops" data-stage="puppy" data-price="21.00">
+<span class="tag">Puppy</span>
+<h3>Small Scoops</h3>
+<dl><div><dt>Life stage</dt><dd>Puppy</dd></div><div><dt>Bag size</dt><dd>5 kg</dd></div><div><dt>Price</dt><dd>BB$ 21.00 <small>(sample currency)</small></dd></div></dl>
+<p class="ing"><strong>Ingredients (sample text):</strong> Turkey, barley, peas, carrot, flaxseed, dried mint.</p>
+<button type="button" class="btn ghost small js-only" data-add aria-pressed="false">Add to plan</button>
+</li><li class="product" id="everyday-biscuit" data-id="everyday-biscuit" data-name="Everyday Biscuit" data-stage="adult" data-price="24.00">
+<span class="tag">Adult</span>
+<h3>Everyday Biscuit</h3>
+<dl><div><dt>Life stage</dt><dd>Adult</dd></div><div><dt>Bag size</dt><dd>5 kg</dd></div><div><dt>Price</dt><dd>BB$ 24.00 <small>(sample currency)</small></dd></div></dl>
+<p class="ing"><strong>Ingredients (sample text):</strong> Lamb, brown rice, oats, sweet potato, sunflower oil, rosemary.</p>
+<button type="button" class="btn ghost small js-only" data-add aria-pressed="false">Add to plan</button>
+</li><li class="product" id="field-bowl" data-id="field-bowl" data-name="Field Bowl" data-stage="adult" data-price="38.00">
+<span class="tag">Adult</span>
+<h3>Field Bowl</h3>
+<dl><div><dt>Life stage</dt><dd>Adult</dd></div><div><dt>Bag size</dt><dd>10 kg</dd></div><div><dt>Price</dt><dd>BB$ 38.00 <small>(sample currency)</small></dd></div></dl>
+<p class="ing"><strong>Ingredients (sample text):</strong> Chicken, barley, peas, carrot, apple, flaxseed, dried parsley.</p>
+<button type="button" class="btn ghost small js-only" data-add aria-pressed="false">Add to plan</button>
+</li><li class="product" id="slow-pour" data-id="slow-pour" data-name="Slow Pour" data-stage="senior" data-price="26.00">
+<span class="tag">Senior</span>
+<h3>Slow Pour</h3>
+<dl><div><dt>Life stage</dt><dd>Senior</dd></div><div><dt>Bag size</dt><dd>5 kg</dd></div><div><dt>Price</dt><dd>BB$ 26.00 <small>(sample currency)</small></dd></div></dl>
+<p class="ing"><strong>Ingredients (sample text):</strong> Turkey, rice, pumpkin, oats, sunflower oil, dried thyme.</p>
+<button type="button" class="btn ghost small js-only" data-add aria-pressed="false">Add to plan</button>
+</li><li class="product" id="evening-bowl" data-id="evening-bowl" data-name="Evening Bowl" data-stage="senior" data-price="12.50">
+<span class="tag">Senior</span>
+<h3>Evening Bowl</h3>
+<dl><div><dt>Life stage</dt><dd>Senior</dd></div><div><dt>Bag size</dt><dd>2 kg</dd></div><div><dt>Price</dt><dd>BB$ 12.50 <small>(sample currency)</small></dd></div></dl>
+<p class="ing"><strong>Ingredients (sample text):</strong> Lamb, oats, sweet potato, carrot, flaxseed, dried mint.</p>
+<button type="button" class="btn ghost small js-only" data-add aria-pressed="false">Add to plan</button>
+</li></ul>
+<aside class="summary js-only" aria-labelledby="sum-h">
+<h3 id="sum-h" tabindex="-1">Your plan</h3>
+<p id="empty">Nothing chosen yet. Press "Add to plan" on a product.</p>
+<ul id="chosen" aria-live="polite"></ul>
+<p class="total"><span>Sample total</span> <strong id="total">BB$ 0.00</strong></p>
+<button type="button" class="btn ghost small" id="clear">Clear plan</button>
+<p class="small">This is a demo. The plan is not saved and no order is placed.</p>
+</aside>
+</div>
+</section>
+<section class="wrap narrow"><p>Want to ask about the sample products? <a class="btn" href="contact.html">Open the demo form</a></p></section>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p><strong>Biscuit &amp; Bowl is a fictional sample brand.</strong> This site is a demo made with Lilac's website track. No real products, prices or orders exist, and nothing you type is sent anywhere.</p>
+<p class="small">Prices are in sample currency (BB$). Ingredient lists are sample text.</p>
+</div>
+</footer>
+<script src="assets/plan.js" defer></script>
+<script src="assets/motion.js" defer></script>
+</body>
+</html>

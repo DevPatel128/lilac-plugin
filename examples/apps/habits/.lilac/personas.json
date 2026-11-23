@@ -1,0 +1,95 @@
+{
+  "_note": "Tasks run in order inside one visitor session and share its browser storage: task 2 and 3 use the habit made by task 1. Each starts from /index.html?t=N#/route so Chrome does a full load (clicking a hash link or changing only the hash fires no load event; see TOOL-ISSUES.md). Skimmer (links and headings only) and no-JS are excluded: the app is buttons-only by design and needs JavaScript (a noscript message is shown).",
+  "tasks": [
+    {
+      "name": "add a habit",
+      "startPage": "/index.html?t=1#/today",
+      "personas": [
+        "mobile-3g",
+        "keyboard",
+        "screen-reader",
+        "low-vision",
+        "reduced-motion",
+        "small-phone"
+      ],
+      "steps": [
+        {
+          "click": "Add your first habit"
+        },
+        {
+          "type": "Name",
+          "text": "Water plants"
+        },
+        {
+          "click": "Add habit"
+        },
+        {
+          "expectText": "0 of 1 done today"
+        }
+      ]
+    },
+    {
+      "name": "mark it done and see the streak",
+      "startPage": "/index.html?t=2#/today",
+      "personas": [
+        "mobile-3g",
+        "keyboard",
+        "screen-reader",
+        "low-vision",
+        "reduced-motion",
+        "small-phone"
+      ],
+      "steps": [
+        {
+          "click": "Water plants, today"
+        },
+        {
+          "expectText": "1 of 1 done today"
+        },
+        {
+          "expectText": "Streak 1 day"
+        }
+      ]
+    },
+    {
+      "name": "export my data",
+      "startPage": "/index.html?t=3#/settings",
+      "personas": [
+        "mobile-3g",
+        "keyboard",
+        "screen-reader",
+        "low-vision",
+        "reduced-motion",
+        "small-phone"
+      ],
+      "steps": [
+        {
+          "click": "Export JSON"
+        },
+        {
+          "expectText": "Exported 1 habit"
+        }
+      ]
+    },
+    {
+      "name": "find help and read an answer",
+      "startPage": "/index.html?t=4#/help",
+      "personas": [
+        "mobile-3g",
+        "keyboard",
+        "screen-reader",
+        "low-vision",
+        "reduced-motion",
+        "small-phone"
+      ],
+      "steps": [
+        {
+          "click": "Where is my data stored?"
+        },
+        {
+          "expectText": "Only in this browser"
+        }
+      ]
+    }
+  ]
+}

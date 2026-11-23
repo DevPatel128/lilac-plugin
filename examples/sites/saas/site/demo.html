@@ -1,0 +1,59 @@
+<!doctype html>
+<!-- Tasklane: FICTIONAL SAMPLE product site built to demo Lilac's website track. Not a real company. Plain HTML/CSS/JS, no external requests. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a demo: Tasklane (fictional demo)</title>
+<meta name="description" content="A sample demo request form for Tasklane, a fictional product. It validates in the browser and sends nothing.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="https://example.com/tasklane/demo.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tasklane (fictional demo)">
+<meta property="og:title" content="Request a demo: Tasklane (fictional demo)">
+<meta property="og:description" content="A sample demo request form for Tasklane, a fictional product. It validates in the browser and sends nothing.">
+<meta property="og:url" content="https://example.com/tasklane/demo.html">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="assets/styles.css">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+<div class="strip">Tasklane is a fictional demo product. Nothing on this site is real.</div>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" fill="currentColor"/><rect x="5" y="6" width="22" height="5" fill="#ff8a5b"/><rect x="5" y="14" width="15" height="5" fill="#d5f25c"/><rect x="5" y="22" width="9" height="5" fill="#4fd1c5"/></svg>Tasklane</a>
+<nav class="nav" aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="how-teams-use-it.html">How teams might use it</a></li><li><a href="faq.html">FAQ</a></li><li><a href="demo.html" aria-current="page">Request a demo</a></li><span class="nav-ind" aria-hidden="true"></span></ul></nav>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-head"><div class="wrap"><p class="eyebrow">Request a demo</p><h1>Ask for a walkthrough.</h1><p class="lede">Demo: nothing is sent. The form only checks your answers in the browser. Use made-up details if you like.</p></div></section>
+<section class="s"><div class="wrap">
+<div id="sent" class="ok" role="status" tabindex="-1" hidden>Demo: nothing was sent. Your answers passed the browser checks and were discarded.</div>
+<noscript><p class="note"><strong>Demo form.</strong> JavaScript is off, and the form still works: it opens a thank-you page. Nothing is sent or stored.</p></noscript>
+<!-- demo only: a real site posts to a server. Only non-sensitive fields have a name attribute, so name, email and message text are never put in the URL. -->
+<form id="demo-form" class="form" method="get" action="thanks.html" style="margin-top:1rem">
+<p class="note"><a href="privacy.html">Privacy note</a>: this demo collects no data.</p>
+<div class="fld"><label for="name">Your name</label><input id="name" autocomplete="name" required aria-describedby="err-name"><p class="err" id="err-name" role="alert"></p></div>
+<div class="fld"><label for="email">Work email</label><input id="email" type="email" autocomplete="email" required aria-describedby="err-email"><p class="err" id="err-email" role="alert"></p></div>
+<div class="fld"><label for="size">Team size</label><select id="size" name="size" required aria-describedby="err-size"><option value="">Choose one</option><option>Just me</option><option>2 to 10 people</option><option>11 to 50 people</option><option>More than 50 people</option></select><p class="err" id="err-size" role="alert"></p></div>
+<div class="fld"><label for="note">Anything we should know? (optional)</label><textarea id="note" rows="4"></textarea></div>
+<div><button class="btn" type="submit">Send demo request</button></div>
+</form>
+</div></section>
+</main>
+<footer>
+<div class="wrap">
+<div class="cols">
+<div><h2>Tasklane</h2><p>A fictional project-management product, invented to demo the Lilac website track. It does not exist: no company, no customers, no accounts.</p></div>
+<div><h2>Pages</h2><ul><li><a href="index.html">Home</a></li><li><a href="features.html">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="how-teams-use-it.html">How teams might use it</a></li><li><a href="faq.html">FAQ</a></li><li><a href="demo.html">Contact: request a demo</a></li></ul></div>
+<div><h2>Read this</h2><ul><li>All prices are SAMPLE prices.</li><li>Scenarios are illustrative examples.</li><li>The demo form sends nothing.</li></ul></div>
+</div>
+<p class="fine">Tasklane is fictional. No real brands, logos, customers, testimonials, ratings, statistics, awards, uptime or security-certification claims appear here. Example only.</p>
+</div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

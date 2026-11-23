@@ -1,0 +1,46 @@
+persona-test: SIMULATED visitors, not real people. Scripted browser sessions check whether tasks can be completed with each method; they do not measure taste, opinions or real demand.
+seed 7; 30 sessions on http://127.0.0.1:<port> (site folder site)
+tasks not applicable to this site: form, info
+
+completion by persona (sessions, tasks done, median steps, median ms):
+  first-time mobile visitor, slow 3G                 2 sess   43% (6/14)  steps 1  1209 ms
+  desktop skimmer (headings and links only)          6 sess   33% (6/18)  steps 0  327 ms
+  keyboard-only user (Tab/Enter)                     6 sess   43% (18/42)  steps 15  1602 ms
+  screen-reader proxy (role + accessible name)       2 sess   43% (6/14)  steps 1  1559 ms
+  low-vision user (320x640, 200% zoom)               4 sess   29% (8/28)  steps 1  1205 ms
+  reduced-motion user                                1 sess   43% (3/7)  steps 1  1093 ms
+  JavaScript-disabled visitor                        4 sess   33% (4/12)  steps 0  318 ms
+  impatient returning visitor                        2 sess    0% (0/2)  steps 0  350 ms
+  small-phone 320 px visitor                         3 sess   43% (9/21)  steps 1  1204 ms
+
+completion by task:
+  understand the offer                             100% (28/28)  steps 0  301 ms
+  find a way to contact/buy/book                     0% (0/30)  steps 0  312 ms
+  reach every top-nav page                           0% (0/28)  steps 1  8718 ms
+  custom:add a habit                                 0% (0/18)  steps 2  1282 ms
+  custom:mark it done and see the streak             0% (0/18)  steps 2  1234 ms
+  custom:export my data                             78% (14/18)  steps 3  1589 ms
+  custom:find help and read an answer              100% (18/18)  steps 1  832 ms
+
+worst failures (5 of 30 group(s)):
+  1. task "find a way to contact/buy/book" | persona keyboard | page / | step 15 | 6 session(s)
+     why: "Write an email" not reached with Tab within 40 presses
+     screenshot: .lilac/personas/fail-bf3a41b7.png
+  2. task "find a way to contact/buy/book" | persona skimmer | page / | step 0 | 6 session(s)
+     why: "Write an email" exists but is hidden
+     screenshot: .lilac/personas/fail-9876008c.png
+  3. task "custom:add a habit" | persona keyboard | page /index.html | step 23 | 6 session(s)
+     why: page did not finish loading within 8s
+     screenshot: .lilac/personas/fail-eb8ba4e0.png
+  4. task "custom:mark it done and see the streak" | persona keyboard | page /index.html | step 24 | 6 session(s)
+     why: page did not finish loading within 8s
+     screenshot: .lilac/personas/fail-2011e26a.png
+  5. task "reach every top-nav page" | persona keyboard | page / | step 7 | 6 session(s)
+     why: page did not finish loading within 8s
+     screenshot: .lilac/personas/fail-6dacd29b.png
+
+FAIL: overall 38% is below 90%; mobile-3g 43% is below 70%; skimmer 33% is below 70%; keyboard 43% is below 70%; screen-reader 43% is below 70%; low-vision 29% is below 70%; reduced-motion 43% is below 70%; no-js 33% is below 70%; impatient 0% is below 70%; small-phone 43% is below 70%
+
+Reminder: these were simulated visitors. Real feedback needs real people.
+persona-test: 30 simulated visitors, 38% tasks completed, 30 failure group(s)
+done

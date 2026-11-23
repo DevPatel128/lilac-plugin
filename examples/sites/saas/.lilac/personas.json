@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    {
+      "name": "funnel: main path",
+      "startPage": "/",
+      "steps": [
+        {
+          "click": "Request a demo"
+        },
+        {
+          "type": "Your name",
+          "text": "Sam Visitor"
+        },
+        {
+          "type": "Work email",
+          "text": "name@example.test"
+        },
+        {
+          "type": "Team size",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "type": "Anything we should know? (optional)",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "click": "Send demo request"
+        },
+        {
+          "expectText": "nothing was sent"
+        }
+      ]
+    }
+  ]
+}

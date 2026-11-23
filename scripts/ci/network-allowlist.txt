@@ -1,0 +1,43 @@
+# Network allowlist for operations/scripts/network-check.mjs. One entry per line: path-substring:pattern  # reason
+# Patterns: fetch, net-import, websocket, xhr, url-call, curl, wget, nc, npm-install, npx.
+# The plugin's own code makes no outbound calls. The only entry is the example site's preview server, which listens on 127.0.0.1 only. Every entry needs a reason and a review.
+examples/sites/serve.mjs:net-import  # localhost-only preview server for the sample sites (binds 127.0.0.1); not plugin code
+examples/apps/serve.mjs:net-import  # localhost-only preview server for the sample web app (binds 127.0.0.1); not plugin code
+scripts/preview.mjs:net-import  # local preview server (binds 127.0.0.1 only) so the user can look at the site before publishing
+scripts/preview.mjs:url-call  # prints the http://127.0.0.1 preview address with console.log; no request is made
+scripts/qa-browser.mjs:net-import  # temp static server bound to 127.0.0.1 so a local Chrome can load the user's own site
+scripts/qa-browser.mjs:fetch  # asks the local Chrome (127.0.0.1 debugging port) for its websocket address; no remote host
+scripts/qa-browser.mjs:url-call  # same line as the fetch above: http://127.0.0.1 only
+scripts/qa-browser.mjs:websocket  # connects to the local Chrome DevTools socket on 127.0.0.1 to drive the page
+scripts/persona-test.mjs:net-import  # temp static server bound to 127.0.0.1 so a local Chrome can load the user's own site
+scripts/persona-test.mjs:fetch  # asks the local Chrome (127.0.0.1 debugging port) for its websocket address and to close a tab; no remote host
+scripts/persona-test.mjs:url-call  # same lines as the fetch above: http://127.0.0.1 only
+scripts/persona-test.mjs:websocket  # connects to the local Chrome DevTools socket on 127.0.0.1 to drive simulated visitors
+scripts/controls-test.mjs:net-import  # temp static server bound to 127.0.0.1 so a local Chrome can load the user's own site
+scripts/controls-test.mjs:fetch  # asks the local Chrome (127.0.0.1 debugging port) for its websocket address; no remote host
+scripts/controls-test.mjs:url-call  # same line as the fetch above: http://127.0.0.1 only
+scripts/controls-test.mjs:websocket  # connects to the local Chrome DevTools socket on 127.0.0.1 to drive the page
+examples/apps/habits/tests/sw.test.js:url-call  # unit test passes http://127.0.0.1 and a fake evil.example URL into an in-memory service-worker sandbox; no request is made (localhost fixtures only)
+scripts/monitor.mjs:net-import  # NETWORK TOOL: only runs on a URL the user passes (link check, uptime, budget); never at install and never in a hook
+scripts/monitor.mjs:fetch  # NETWORK TOOL: requests only the URL the user passes (same origin, capped, 1 request per second); never runs on its own
+scripts/monitor.mjs:websocket  # drives a local Chrome on 127.0.0.1 for the performance budget measurement; no remote host
+scripts/monitor.mjs:url-call  # same lines as the fetch and local Chrome calls above: only a URL the user passes, or 127.0.0.1
+scripts/change.mjs:net-import  # temp static server bound to 127.0.0.1 so a local Chrome can screenshot the user's own site
+scripts/change.mjs:fetch  # asks the local Chrome (127.0.0.1 debugging port) for its websocket address; no remote host
+scripts/change.mjs:url-call  # same line as the fetch above: http://127.0.0.1 only
+scripts/change.mjs:websocket  # connects to the local Chrome DevTools socket on 127.0.0.1
+features/server/checkout.mjs:url-call  # template copied into the user's own project; calls the payment vendor only after the owner deploys it with their own test key; the plugin never runs it
+features/server/deliver.mjs:url-call  # template copied into the user's own project; calls the email or database vendor only after the owner deploys it with their own key; the plugin never runs it
+features/server/test/cli.test.mjs:url-call  # unit-test fixtures use fake hosts and an injected fake fetch; no request is made (localhost only)
+features/server/test/cli.test.mjs:websocket  # unit-test fixture string for a rejected scheme; no socket is opened (localhost only)
+features/server/test/cli.test.mjs:xhr  # unit-test fixture string for a rejected pattern; no request is made (localhost only)
+features/server/test/contact.test.mjs:url-call  # unit-test fixtures build in-memory Request objects for fake hosts; no request is made (localhost only)
+features/server/test/payments.test.mjs:url-call  # unit-test fixtures build in-memory Request objects for fake hosts; no request is made (localhost only)
+examples/apps/habits/site/sw.js:fetch  # the sample web app's service worker: serves its own cached files and fetches same-origin requests only (cross-origin is refused); localhost preview
+examples/apps/habits/tests/qa-screens.mjs:fetch  # test helper: asks a local Chrome (127.0.0.1 debugging port) for its websocket address
+examples/apps/habits/tests/qa-screens.mjs:url-call  # same line as the fetch above: http://127.0.0.1 only
+examples/apps/habits/tests/qa-screens.mjs:websocket  # test helper: connects to the local Chrome DevTools socket on 127.0.0.1
+examples/apps/habits/tests/state-checks.mjs:net-import  # test helper: local http server for the test page, 127.0.0.1 only
+examples/apps/habits/tests/state-checks.mjs:fetch  # test helper: asks a local Chrome (127.0.0.1 debugging port) for its websocket address
+examples/apps/habits/tests/state-checks.mjs:url-call  # same line as the fetch above: http://127.0.0.1 only
+examples/apps/habits/tests/state-checks.mjs:websocket  # test helper: connects to the local Chrome DevTools socket on 127.0.0.1

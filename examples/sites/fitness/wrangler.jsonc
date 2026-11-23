@@ -1,0 +1,6 @@
+// Static-assets Worker. Source: https://developers.cloudflare.com/workers/static-assets/
+{
+  "name": "still-water-demo",
+  "compatibility_date": "2026-11-21",
+  "assets": { "directory": "./site" }
+}

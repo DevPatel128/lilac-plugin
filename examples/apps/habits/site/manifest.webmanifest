@@ -1,0 +1,15 @@
+{
+  "name": "Pocket Habits (fictional sample)",
+  "short_name": "Pocket Habits",
+  "description": "A fictional sample habit tracker. Data stays in your browser.",
+  "id": "/",
+  "start_url": "/index.html#/today",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#faf8ff",
+  "theme_color": "#5b3fd1",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon-maskable.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,133 @@
+Controls test for /Users/devu/Documents/Projects /Lilac - Framework and Kit/product-growth/media/demo-apps/habits/site (Chrome, 1280 px and 390 px; screenshots of failures in /Users/devu/Documents/Projects /Lilac - Framework and Kit/product-growth/media/demo-apps/habits/.lilac/controls)
+
+404.html
+  control         | kind      | verdict          | detail
+  Skip to content | link      | OK               | navigated to /404.html#main; focus moved to main#main; visually hidden until focused
+  Go to Today     | link      | OK               | navigated to /
+
+index.html
+  control                                      | kind      | verdict          | detail
+  Skip to content                              | link      | OK               | navigated to /index.html#main; focus moved to main#main; visually hidden until focused
+  Pocket Habits                                | link      | OK               | navigated to /index.html#/today; DOM changed; focus moved to h2#h-today
+  Today                                        | link      | OK               | navigated to /index.html#/today; DOM changed; focus moved to h2#h-today
+  Insights                                     | link      | OK               | navigated to /index.html#/insights; DOM changed; focus moved to h2#h-insights
+  Settings                                     | link      | OK               | navigated to /index.html#/settings; DOM changed; focus moved to h2#h-settings
+  Help                                         | link      | OK               | navigated to /index.html#/help; DOM changed; focus moved to h2#h-help
+  Support                                      | link      | OK               | navigated to /index.html#/support; DOM changed; focus moved to h2#h-support
+  About                                        | link      | OK               | navigated to /index.html#/about; DOM changed; focus moved to h2#h-about
+  Take the tour                                | button    | OK               | DOM changed; focus moved to button#tour-next; dialog, popover or expanded state changed
+  Not now                                      | button    | OK               | DOM changed; focus moved to h2#h-today; storage or cookie changed
+  Add your first habit                         | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  Add 3 sample habits                          | button    | OK               | DOM changed; focus moved to li; storage or cookie changed
+  Keyboard shortcuts                           | button    | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  today: Search habits                         | field     | OK               | accepts input; DOM changed
+  today: Show                                  | select    | OK               | 3 option(s) chosen, 3 with an effect; DOM changed
+  today: Sort by                               | select    | OK               | 4 option(s) chosen, 4 with an effect; DOM changed
+  today: New habit n                           | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  today: Edit Drink water                      | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  today: Delete Drink water                    | button    | OK               | DOM changed; focus moved to li; storage or cookie changed
+  today: Edit Stretch                          | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  today: Delete Stretch                        | button    | OK               | DOM changed; focus moved to li; storage or cookie changed
+  today: Edit Read                             | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  today: Delete Read                           | button    | OK               | DOM changed; focus moved to h2#h-today; storage or cookie changed
+  insights: Go to Today                        | link      | OK               | navigated to /index.html#/today; DOM changed; focus moved to h2#h-today
+  settings: Light                              | radio     | OK               | DOM changed; storage or cookie changed
+  settings: Dark                               | radio     | OK               | DOM changed; storage or cookie changed
+  settings: Sunday                             | radio     | OK               | DOM changed; storage or cookie changed
+  settings: Always off                         | radio     | OK               | DOM changed; storage or cookie changed
+  settings: Export JSON                        | button    | OK               | download started: pocket-habits-2026-11-22.json; DOM changed
+  settings: Import JSON                        | button    | OK               | opens a file picker (intercepted, not driven)
+  settings: Show onboarding again              | button    | OK               | DOM changed; focus moved to button#tour-next; dialog, popover or expanded state changed; storage or cookie changed
+  settings: Reset all data                     | button    | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  help: Keyboard shortcuts ?                   | button    | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  help: Take the tour                          | button    | OK               | DOM changed; focus moved to button#tour-next; dialog, popover or expanded state changed
+  help: Where is my data stored?               | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: How do I back up my habits?            | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: How are streaks counted?               | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: How is weekly progress counted?        | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: Does it work offline?                  | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: What are the keyboard shortcuts?       | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: Can I install it as an app?            | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: What is not collected?                 | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: How do I delete everything?            | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: I deleted a habit by mistake. Can I ge | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: What if the browser says storage is fu | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  help: What happens if I import a bad file?   | button    | OK               | DOM changed; dialog, popover or expanded state changed
+  support: Write an email                      | link      | OK               | mailto intercepted, address valid, subject present
+  support: Copy support email                  | button    | OK               | DOM changed; copied text: "support@example.test"
+  support: Copy diagnostics                    | button    | OK               | DOM changed; copied text: "Pocket Habits diagnostics
+App "
+  about: Settings                              | link      | OK               | navigated to /index.html#/settings; DOM changed; focus moved to h2#h-settings
+  Skip tour (after: Take the tour)             | button    | OK               | DOM changed; focus moved to h2#h-today; dialog, popover or expanded state changed; storage or cookie changed
+  Next (after: Take the tour)                  | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Next-1.png
+  Take the tour (after: Not now)               | button    | OK               | DOM changed; focus moved to button#tour-next; dialog, popover or expanded state changed
+  Name (after: Add your first habit)           | field     | OK               | accepts input; sent with its form
+  Weekly target (after: Add your first habit)  | select    | OK               | 7 option(s) chosen; value sent with its form
+  Teal (after: Add your first habit)           | radio     | OK               | state toggled; sent with its form
+  Rose (after: Add your first habit)           | radio     | OK               | state toggled; sent with its form
+  Amber (after: Add your first habit)          | radio     | OK               | state toggled; sent with its form
+  Green (after: Add your first habit)          | radio     | OK               | state toggled; sent with its form
+  Blue (after: Add your first habit)           | radio     | OK               | state toggled; sent with its form
+  Slate (after: Add your first habit)          | radio     | OK               | state toggled; sent with its form
+  Orange (after: Add your first habit)         | radio     | OK               | state toggled; sent with its form
+  Cancel (after: Add your first habit)         | button    | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  Add habit (after: Add your first habit)      | button    | OK               | DOM changed; focus moved to li; dialog, popover or expanded state changed; storage or cookie changed
+  Edit Sample text (after: Add 3 sample habits | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  Delete Sample text (after: Add 3 sample habi | button    | OK               | DOM changed; focus moved to h2#h-today; storage or cookie changed
+  Close (after: Keyboard shortcuts)            | button    | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  today: Save changes (after: Edit Drink water | button    | OK               | DOM changed; focus moved to li; dialog, popover or expanded state changed; storage or cookie changed
+  settings: Cancel (after: Reset all data)     | button    | OK               | DOM changed; focus moved to button#reset; dialog, popover or expanded state changed
+  settings: Erase everything (after: Reset all | button    | OK               | DOM changed; focus moved to button#reset; dialog, popover or expanded state changed; storage or cookie changed
+  Take the tour dialog                         | dialog    | OK               | opened, then closed with Escape
+  Add your first habit dialog                  | dialog    | OK               | opened, then closed with Escape
+  Keyboard shortcuts dialog                    | dialog    | OK               | opened, then closed with Escape
+  settings: Reset all data dialog              | dialog    | OK               | opened, then closed with Escape
+  ?                                            | shortcut  | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  about: Reload to update                      | button    | UNREACHABLE      | never visible at any viewport (1280 and 390 px) or reachable screen (display none, zero size or off-screen) and not a skip link
+  about: Clear search and filter               | button    | UNREACHABLE      | never visible at any viewport (1280 and 390 px) or reachable screen (display none, zero size or off-screen) and not a skip link
+  about: OK                                    | button    | UNREACHABLE      | never visible at any viewport (1280 and 390 px) or reachable screen (display none, zero size or off-screen) and not a skip link
+  about: Back                                  | button    | UNREACHABLE      | never visible at any viewport (1280 and 390 px) or reachable screen (display none, zero size or off-screen) and not a skip link
+
+Totals: OK 76, DEAD 0, DISABLED-FOREVER 0, BROKEN-LINK 0, PLACEHOLDER 0, UNREACHABLE 5, TOO-SMALL 0
+
+UNVERIFIED (not exercised by this tool)
+  index.html: 1 file input(s): native file pickers cannot be driven
+  index.html: "Drink water, Mon, Nov 16" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Drink water, Tue, Nov 17" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Drink water, Wed, Nov 18" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Drink water, Thu, Nov 19" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Drink water, Fri, Nov 20" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Drink water, Sat, Nov 21" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Drink water, today, Sun, Nov 22" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Stretch, Mon, Nov 16" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Stretch, Tue, Nov 17" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Stretch, Wed, Nov 18" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Stretch, Thu, Nov 19" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Stretch, Fri, Nov 20" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Stretch, Sat, Nov 21" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Stretch, today, Sun, Nov 22" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Read, Mon, Nov 16" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Read, Tue, Nov 17" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Read, Wed, Nov 18" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Read, Thu, Nov 19" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Read, Fri, Nov 20" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Read, Sat, Nov 21" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Read, today, Sun, Nov 22" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: radio "Follow my device": already selected; its state change is covered by the other radios in the group
+  index.html: radio "Monday": already selected; its state change is covered by the other radios in the group
+  index.html: radio "Violet": already selected; its state change is covered by the other radios in the group
+  index.html: "Sample text, Mon, Nov 16" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Sample text, Tue, Nov 17" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Sample text, Wed, Nov 18" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Sample text, Thu, Nov 19" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Sample text, Fri, Nov 20" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Sample text, Sat, Nov 21" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: "Sample text, today, Sun, Nov 22" (button): could not re-locate the control after a reload (tried twice); not judged
+  index.html: screen after Delete Drink water: could not replay "Delete Drink water" to reach this screen
+  index.html: dialog after Edit Drink water: could not replay "Edit Drink water" to reach this screen
+  external link destinations: https links to other sites were intercepted and validated, not fetched (no external network)
+  hover-only, long-press and drag-only controls: only click, toggle, typing and key presses are performed
+  controls inside iframes or shadow roots, and other viewports: the sweep reads the top document at 1280 px and 390 px only (tablet widths and real touch are not driven)
+  whether an effect is the RIGHT effect: an effect proves the control is wired, not that it does what its label promises; a human or test must judge that
+
+controls-test: 81 controls, 0 dead, 0 broken, 0 placeholder, 5 unreachable (94% operable)

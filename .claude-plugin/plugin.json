@@ -1,0 +1,19 @@
+{
+  "name": "lilac",
+  "version": "0.1.0",
+  "description": "Agent skills and roles to build websites and web apps faster and ship with proof. Your data stays on your machine.",
+  "license": "MIT",
+  "keywords": [
+    "agents",
+    "skills",
+    "framework",
+    "web",
+    "mobile",
+    "security",
+    "docs"
+  ],
+  "author": {
+    "name": "Dev Patel",
+    "email": "devpatel1286@gmail.com"
+  }
+}

@@ -1,0 +1,10 @@
+# Tool issues (possible mistakes in the Lilac tools, not site problems)
+
+1. `qa-browser.mjs` line (products.html): `warn  [focus-order] focus jumps backwards on the page to button#clear "Clear plan"`.
+   Why it looks like a tool heuristic, not a site fault: the plan summary is `position:sticky` and last in the DOM, so Tab order is read top to bottom and left to right through the list, then the summary. The tool compares page y of each focused element and flags a drop of more than 400 px; a sticky element's y follows the scroll position. The warning appeared only after an unrelated line was added above the list (it was absent in earlier runs of the same layout), which points to a borderline threshold. The site was not changed to appease it.
+2. `controls-test.mjs` totals differ between runs on the same site: `controls-test: 97 controls`, `94 controls`, `100 controls` and finally `108 controls` (the last after the contact form and plan line were added, which add controls). Variation between identical-code runs (97, 94, 100) suggests the sweep order or filter state changes what is counted. All runs had 0 dead, 0 broken, 0 placeholder, 0 unreachable. The coordinator mentioned an earlier 154 on this site; not reproduced.
+
+## 2026-11-23 persona-test (seed 7, 30 visitors): suspected tool false positives
+
+1. `custom:funnel: main path` 65% (13/20). Lines: `why: "Your name" exists but is hidden` for the low-vision (320x640, 200% zoom) and small-phone personas on `/contact.html`. The field `input#name` is a normal visible text input; at these viewports it sits below the first screen, and the walker reports "hidden". The generic task `complete the main form` passes 100% (20/20) on the same page at the same viewports, so the form is reachable. Not edited around.
+2. `session | persona mobile-3g | page / | browser error: session timed out` (2 sessions): the slow-3G throttle timed out loading `/`; other personas load the same page. Looks like a timeout in the tool, not a site fault. UNVERIFIED by a second run.

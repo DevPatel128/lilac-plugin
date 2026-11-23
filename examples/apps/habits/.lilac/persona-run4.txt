@@ -1,0 +1,46 @@
+persona-test: SIMULATED visitors, not real people. Scripted browser sessions check whether tasks can be completed with each method; they do not measure taste, opinions or real demand.
+seed 7; 30 sessions on http://127.0.0.1:<port> (site folder site)
+tasks not applicable to this site: form, info
+
+completion by persona (sessions, tasks done, median steps, median ms):
+  first-time mobile visitor, slow 3G                 2 sess   57% (8/14)  steps 1  755 ms
+  desktop skimmer (headings and links only)          6 sess   33% (6/18)  steps 0  669 ms
+  keyboard-only user (Tab/Enter)                     6 sess   43% (18/42)  steps 12  725 ms
+  screen-reader proxy (role + accessible name)       2 sess   50% (7/14)  steps 0.5  713 ms
+  low-vision user (320x640, 200% zoom)               4 sess   57% (16/28)  steps 1  735 ms
+  reduced-motion user                                1 sess   57% (4/7)  steps 1  685 ms
+  JavaScript-disabled visitor                        4 sess   33% (4/12)  steps 0  351 ms
+  impatient returning visitor                        2 sess   50% (1/2)  steps 0.5  818 ms
+  small-phone 320 px visitor                         3 sess   57% (12/21)  steps 1  724 ms
+
+completion by task:
+  understand the offer                             100% (28/28)  steps 0  649 ms
+  find a way to contact/buy/book                    27% (8/30)  steps 0  660 ms
+  reach every top-nav page                           0% (0/28)  steps 1  9045 ms
+  custom:add a habit                                22% (4/18)  steps 4  686 ms
+  custom:mark it done and see the streak             0% (0/18)  steps 0  638 ms
+  custom:export my data                            100% (18/18)  steps 1  721 ms
+  custom:find help and read an answer              100% (18/18)  steps 1  865 ms
+
+worst failures (5 of 32 group(s)):
+  1. task "custom:add a habit" | persona keyboard | page /index.html?t=1 | step 25 | 6 session(s)
+     why: "Add your first habit" not reached with Tab within 40 presses
+     screenshot: .lilac/personas/fail-d04c2d8a.png
+  2. task "custom:mark it done and see the streak" | persona keyboard | page /index.html?t=2 | step 0 | 6 session(s)
+     why: nothing to click that says "Water plants, today"
+     screenshot: .lilac/personas/fail-9e9e90a2.png
+  3. task "reach every top-nav page" | persona keyboard | page / | step 7 | 6 session(s)
+     why: page did not finish loading within 8s
+     screenshot: .lilac/personas/fail-6dacd29b.png
+  4. task "reach every top-nav page" | persona skimmer | page / | step 1 | 6 session(s)
+     why: page did not finish loading within 8s
+     screenshot: .lilac/personas/fail-524b89f6.png
+  5. task "find a way to contact/buy/book" | persona keyboard | page / | step 26 | 4 session(s)
+     why: "Water plants Streak 0 days · This week 0/5 · Best 0 days Edi" is not keyboard-focusable (<li> with a mouse handler, not a link or button): Tab never reaches it
+     screenshot: .lilac/personas/fail-b59a57b5.png
+
+FAIL: overall 48% is below 90%; mobile-3g 57% is below 70%; skimmer 33% is below 70%; keyboard 43% is below 70%; screen-reader 50% is below 70%; low-vision 57% is below 70%; reduced-motion 57% is below 70%; no-js 33% is below 70%; impatient 50% is below 70%; small-phone 57% is below 70%
+
+Reminder: these were simulated visitors. Real feedback needs real people.
+persona-test: 30 simulated visitors, 48% tasks completed, 32 failure group(s)
+done

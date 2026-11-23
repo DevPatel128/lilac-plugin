@@ -1,0 +1,117 @@
+Controls test for /Users/devu/Documents/Projects /Lilac - Framework and Kit/product-growth/media/demo-apps/habits/site (Chrome, 1280 px; screenshots of failures in /Users/devu/Documents/Projects /Lilac - Framework and Kit/product-growth/media/demo-apps/habits/.lilac/controls)
+
+404.html
+  control         | kind      | verdict          | detail
+  Skip to content | link      | OK               | navigated to /404.html#main; focus moved to main#main; visually hidden until focused
+  Go to Today     | link      | OK               | navigated to /
+
+index.html
+  control                                      | kind      | verdict          | detail
+  Skip to content                              | link      | OK               | navigated to /index.html#main; focus moved to main#main; visually hidden until focused
+  Pocket Habits                                | link      | OK               | navigated to /index.html#/today; DOM changed; focus moved to h2#h-today
+  Today                                        | link      | OK               | navigated to /index.html#/today; DOM changed; focus moved to h2#h-today
+  Insights                                     | link      | OK               | navigated to /index.html#/insights; DOM changed; focus moved to h2#h-insights
+  Settings                                     | link      | OK               | navigated to /index.html#/settings; DOM changed; focus moved to h2#h-settings
+  Help                                         | link      | OK               | navigated to /index.html#/help; DOM changed; focus moved to h2#h-help
+  Support                                      | link      | OK               | navigated to /index.html#/support; DOM changed; focus moved to h2#h-support
+  About                                        | link      | OK               | navigated to /index.html#/about; DOM changed; focus moved to h2#h-about
+  Take the tour                                | button    | OK               | DOM changed; focus moved to button#tour-next; dialog, popover or expanded state changed
+  Not now                                      | button    | OK               | DOM changed; focus moved to h2#h-today; storage or cookie changed
+  Add your first habit                         | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  Add 3 sample habits                          | button    | OK               | DOM changed; storage or cookie changed
+  Keyboard shortcuts                           | button    | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  Search habits (after: Take the tour)         | field     | OK               | accepts input; DOM changed
+  Show (after: Take the tour)                  | select    | OK               | 3 option(s) chosen, 3 with an effect; DOM changed
+  Sort by (after: Take the tour)               | select    | OK               | 4 option(s) chosen, 4 with an effect; DOM changed
+  New habit n (after: Take the tour)           | button    | OK               | DOM changed; focus moved to input#f-name; dialog, popover or expanded state changed
+  Edit Drink water (after: Take the tour)      | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Edit_Drink_water-1.png
+  Delete Drink water (after: Take the tour)    | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Delete_Drink_water-2.png
+  Drink water, Mon, Nov 16 (after: Take the to | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Drink_water_Mon_Nov_16-3.png
+  Drink water, Tue, Nov 17 (after: Take the to | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Drink_water_Tue_Nov_17-4.png
+  Drink water, Wed, Nov 18 (after: Take the to | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Drink_water_Wed_Nov_18-5.png
+  Drink water, Thu, Nov 19 (after: Take the to | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Drink_water_Thu_Nov_19-6.png
+  Drink water, Fri, Nov 20 (after: Take the to | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Drink_water_Fri_Nov_20-7.png
+  Drink water, Sat, Nov 21 (after: Take the to | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Drink_water_Sat_Nov_21-8.png
+  Drink water, today, Sun, Nov 22 (after: Take | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Drink_water_today_Sun_Nov_22-9.png
+  Edit Stretch (after: Take the tour)          | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Edit_Stretch-10.png
+  Delete Stretch (after: Take the tour)        | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Delete_Stretch-11.png
+  Stretch, Mon, Nov 16 (after: Take the tour)  | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Stretch_Mon_Nov_16-12.png
+  Stretch, Tue, Nov 17 (after: Take the tour)  | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Stretch_Tue_Nov_17-13.png
+  Stretch, Wed, Nov 18 (after: Take the tour)  | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Stretch_Wed_Nov_18-14.png
+  Stretch, Thu, Nov 19 (after: Take the tour)  | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Stretch_Thu_Nov_19-15.png
+  Stretch, Fri, Nov 20 (after: Take the tour)  | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Stretch_Fri_Nov_20-16.png
+  Stretch, Sat, Nov 21 (after: Take the tour)  | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Stretch_Sat_Nov_21-17.png
+  Stretch, today, Sun, Nov 22 (after: Take the | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Stretch_today_Sun_Nov_22-18.png
+  Edit Read (after: Take the tour)             | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Edit_Read-19.png
+  Delete Read (after: Take the tour)           | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Delete_Read-20.png
+  Read, Mon, Nov 16 (after: Take the tour)     | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_Mon_Nov_16-21.png
+  Read, Tue, Nov 17 (after: Take the tour)     | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_Tue_Nov_17-22.png
+  Read, Wed, Nov 18 (after: Take the tour)     | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_Wed_Nov_18-23.png
+  Read, Thu, Nov 19 (after: Take the tour)     | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_Thu_Nov_19-24.png
+  Read, Fri, Nov 20 (after: Take the tour)     | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_Fri_Nov_20-25.png
+  Read, Sat, Nov 21 (after: Take the tour)     | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_Sat_Nov_21-26.png
+  Read, today, Sun, Nov 22 (after: Take the to | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_today_Sun_Nov_22-27.png
+  Close (after: Keyboard shortcuts)            | button    | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+  Reload to update (after: Keyboard shortcuts) | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Take the tour (after: Keyboard shortcuts)    | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Clear search and filter (after: Keyboard sho | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Go to Today (after: Keyboard shortcuts)      | link      | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Follow my device (after: Keyboard shortcuts) | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Light (after: Keyboard shortcuts)            | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Dark (after: Keyboard shortcuts)             | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Monday (after: Keyboard shortcuts)           | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Sunday (after: Keyboard shortcuts)           | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Follow my device (after: Keyboard shortcuts) | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Always off (after: Keyboard shortcuts)       | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Export JSON (after: Keyboard shortcuts)      | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Import JSON (after: Keyboard shortcuts)      | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Show onboarding again (after: Keyboard short | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Reset all data (after: Keyboard shortcuts)   | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Keyboard shortcuts ? (after: Keyboard shortc | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Take the tour (after: Keyboard shortcuts)    | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Where is my data stored? (after: Keyboard sh | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  How do I back up my habits? (after: Keyboard | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  How are streaks counted? (after: Keyboard sh | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  How is weekly progress counted? (after: Keyb | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Does it work offline? (after: Keyboard short | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  What are the keyboard shortcuts? (after: Key | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Can I install it as an app? (after: Keyboard | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  What is not collected? (after: Keyboard shor | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  How do I delete everything? (after: Keyboard | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  I deleted a habit by mistake. Can I get  (af | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  What if the browser says storage is full (af | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  What happens if I import a bad file? (after: | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Write an email (after: Keyboard shortcuts)   | link      | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Copy support email (after: Keyboard shortcut | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Copy diagnostics (after: Keyboard shortcuts) | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Settings (after: Keyboard shortcuts)         | link      | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Name (after: Keyboard shortcuts)             | field     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Weekly target (after: Keyboard shortcuts)    | select    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Violet (after: Keyboard shortcuts)           | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Teal (after: Keyboard shortcuts)             | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Rose (after: Keyboard shortcuts)             | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Amber (after: Keyboard shortcuts)            | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Green (after: Keyboard shortcuts)            | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Blue (after: Keyboard shortcuts)             | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Slate (after: Keyboard shortcuts)            | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Orange (after: Keyboard shortcuts)           | radio     | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Cancel (after: Keyboard shortcuts)           | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Add habit (after: Keyboard shortcuts)        | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Cancel (after: Keyboard shortcuts)           | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  OK (after: Keyboard shortcuts)               | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Skip tour (after: Keyboard shortcuts)        | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Back (after: Keyboard shortcuts)             | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  Next (after: Keyboard shortcuts)             | button    | UNREACHABLE      | never visible in any reachable screen (display none, zero size or off-screen) and not a skip link
+  ?                                            | shortcut  | OK               | DOM changed; focus moved to button; dialog, popover or expanded state changed
+
+Totals: OK 21, DEAD 0, DISABLED-FOREVER 0, BROKEN-LINK 0, PLACEHOLDER 0, UNREACHABLE 77, TOO-SMALL 0
+
+UNVERIFIED (not exercised by this tool)
+  index.html: 1 file input(s): native file pickers cannot be driven
+  external link destinations: https links to other sites were intercepted and validated, not fetched (no external network)
+  hover-only, long-press and drag-only controls: only click, toggle, typing and key presses are performed
+  controls inside iframes or shadow roots, and narrow (mobile) layouts: the sweep reads the top document at 1280 px; open menus that only exist on narrow screens are not seen
+  whether an effect is the RIGHT effect: an effect proves the control is wired, not that it does what its label promises; a human or test must judge that
+
+controls-test: 98 controls, 0 dead, 0 broken, 0 placeholder, 77 unreachable (21% operable)
+exit 1

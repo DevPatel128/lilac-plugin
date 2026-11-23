@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- example.com is a placeholder (ASSUMED). Fictional sample site. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://example.com/atelier-nord/</loc></url>
+<url><loc>https://example.com/atelier-nord/projects.html</loc></url>
+<url><loc>https://example.com/atelier-nord/project.html</loc></url>
+<url><loc>https://example.com/atelier-nord/approach.html</loc></url>
+<url><loc>https://example.com/atelier-nord/journal.html</loc></url>
+<url><loc>https://example.com/atelier-nord/contact.html</loc></url>
+<url><loc>https://example.com/atelier-nord/privacy.html</loc></url>
+</urlset>

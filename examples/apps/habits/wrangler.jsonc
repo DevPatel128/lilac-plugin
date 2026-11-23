@@ -1,0 +1,10 @@
+// Static-assets Worker. Source: https://developers.cloudflare.com/workers/static-assets/
+// site/_headers carries the CSP and security headers. Not deployed by the builder.
+{
+  "name": "pocket-habits-demo",
+  "compatibility_date": "2026-11-21",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  }
+}

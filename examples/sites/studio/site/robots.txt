@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap host is a placeholder (ASSUMED): replace example.com when a real domain exists.
+Sitemap: https://example.com/atelier-nord/sitemap.xml

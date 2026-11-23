@@ -1,0 +1,7 @@
+{
+  "name": "pocket-habits-demo",
+  "private": true,
+  "type": "module",
+  "description": "FICTIONAL sample habit tracker (Lilac web-app-track example). No dependencies.",
+  "scripts": { "test": "node --test" }
+}

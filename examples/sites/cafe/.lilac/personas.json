@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "name": "funnel: main path",
+      "startPage": "/",
+      "steps": [
+        {
+          "click": "Book a table"
+        },
+        {
+          "type": "Name",
+          "text": "Sam Visitor"
+        },
+        {
+          "type": "Email (use a fake one, like name@example.test)",
+          "text": "name@example.test"
+        },
+        {
+          "type": "Day",
+          "text": "2030-01-15"
+        },
+        {
+          "type": "Guests (1 to 12)",
+          "text": "1"
+        },
+        {
+          "type": "Note (optional)",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "click": "Send booking (demo)"
+        },
+        {
+          "expectText": "nothing was sent"
+        }
+      ]
+    }
+  ]
+}

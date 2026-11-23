@@ -1,0 +1,4 @@
+# Biscuit & Bowl: fictional sample site (placeholder domain)
+User-agent: *
+Allow: /
+Sitemap: https://example.com/biscuit-and-bowl/sitemap.xml

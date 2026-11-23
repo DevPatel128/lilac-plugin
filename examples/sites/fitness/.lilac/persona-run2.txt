@@ -1,0 +1,45 @@
+persona-test: SIMULATED visitors, not real people. Scripted browser sessions check whether tasks can be completed with each method; they do not measure taste, opinions or real demand.
+seed 7; 30 sessions on http://127.0.0.1:<port> (site folder site)
+tasks not applicable to this site: none
+
+completion by persona (sessions, tasks done, median steps, median ms):
+  first-time mobile visitor, slow 3G                 2 sess   80% (8/10)  steps 0  4773 ms
+  desktop skimmer (headings and links only)          6 sess  100% (24/24)  steps 0.5  4798 ms
+  keyboard-only user (Tab/Enter)                     6 sess  100% (30/30)  steps 5  2609 ms
+  screen-reader proxy (role + accessible name)       2 sess  100% (10/10)  steps 1  2611 ms
+  low-vision user (320x640, 200% zoom)               4 sess   60% (12/20)  steps 0  634 ms
+  reduced-motion user                                1 sess  100% (5/5)  steps 1  763 ms
+  JavaScript-disabled visitor                        4 sess   80% (16/20)  steps 1  678 ms
+  impatient returning visitor                        2 sess  100% (4/4)  steps 0.5  5013 ms
+  small-phone 320 px visitor                         3 sess   80% (12/15)  steps 0  2504 ms
+
+completion by task:
+  understand the offer                             100% (28/28)  steps 0  1222 ms
+  find a way to contact/buy/book                   100% (30/30)  steps 1  2603 ms
+  reach every top-nav page                          86% (24/28)  steps 1  10676 ms
+  complete the main form                            41% (9/22)  steps 7  1334 ms
+  find opening hours or a price                    100% (30/30)  steps 0  6811 ms
+
+worst failures (5 of 6 group(s)):
+  1. task "complete the main form" | persona low-vision | page /contact.html | step 0 | 4 session(s)
+     why: "Name" is covered by offscreen
+     screenshot: .lilac/personas/fail-c4704427.png
+  2. task "complete the main form" | persona no-js | page /contact.html | step 7 | 4 session(s)
+     why: "Anything you would like the teacher to know (optional)" is covered by offscreen
+     screenshot: .lilac/personas/fail-44df1fca.png
+  3. task "complete the main form" | persona small-phone | page /contact.html | step 0 | 3 session(s)
+     why: "Name" is covered by offscreen
+     screenshot: .lilac/personas/fail-513aabbd.png
+  4. task "complete the main form" | persona mobile-3g | page /contact.html | step 0 | 2 session(s)
+     why: "Name" is covered by offscreen
+     screenshot: .lilac/personas/fail-c1bdf5c9.png
+  5. task "reach every top-nav page" | persona low-vision | page / | step 0 | 2 session(s)
+     why: nav item "Book a trial": "Book a trial" is covered by offscreen
+     screenshot: .lilac/personas/fail-8baf602e.png
+
+note: price or opening hours present but below the fold (30 session(s)), counted as a pass
+
+FAIL: overall 88% is below 90%; low-vision 60% is below 70%
+
+Reminder: these were simulated visitors. Real feedback needs real people.
+persona-test: 30 simulated visitors, 88% tasks completed, 6 failure group(s)

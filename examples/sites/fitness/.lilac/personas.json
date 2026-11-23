@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "name": "funnel: main path",
+      "startPage": "/",
+      "steps": [
+        {
+          "click": "Book a trial"
+        },
+        {
+          "type": "Name",
+          "text": "Sam Visitor"
+        },
+        {
+          "type": "Email",
+          "text": "name@example.test"
+        },
+        {
+          "type": "Class",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "type": "Day",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "type": "Level",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "click": "Request sample trial class"
+        },
+        {
+          "expectText": "nothing was sent"
+        }
+      ]
+    }
+  ]
+}

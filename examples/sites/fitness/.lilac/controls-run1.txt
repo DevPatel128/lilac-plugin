@@ -1,0 +1,153 @@
+Controls test for /Users/devu/Documents/Projects /Lilac - Framework and Kit/product-growth/media/demo-sites/fitness/site (Chrome, 1280 px; screenshots of failures in /Users/devu/Documents/Projects /Lilac - Framework and Kit/product-growth/media/demo-sites/fitness/.lilac/controls)
+
+404.html
+  control           | kind      | verdict          | detail
+  Skip to content   | link      | OK               | navigated to /404.html#main; DOM changed; focus moved to main#main; visually hidden until focused
+  Still Water, home | link      | OK               | navigated to /index.html
+  Home              | link      | OK               | navigated to /index.html
+  Classes           | link      | OK               | navigated to /classes.html
+  Teachers          | link      | OK               | navigated to /teachers.html
+  Memberships       | link      | OK               | navigated to /memberships.html
+  First visit       | link      | OK               | navigated to /first-visit.html
+  Book a trial      | link      | OK               | navigated to /contact.html
+  Home              | link      | OK               | navigated to /index.html
+  Timetable         | link      | OK               | navigated to /classes.html
+  Book a trial      | link      | OK               | navigated to /contact.html
+  Classes           | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Classes-1.png
+  Memberships       | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Memberships-2.png
+  First visit       | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/First_visit-3.png
+  Book a trial      | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Book_a_trial-4.png
+
+classes.html
+  control                       | kind      | verdict          | detail
+  Skip to content               | link      | OK               | navigated to /classes.html#main; DOM changed; focus moved to main#main; visually hidden until focused
+  Still Water, home             | link      | OK               | navigated to /index.html
+  Home                          | link      | OK               | navigated to /index.html
+  Classes                       | link      | OK               | current-page link (points at the page you are already on)
+  Teachers                      | link      | OK               | navigated to /teachers.html
+  Memberships                   | link      | OK               | navigated to /memberships.html
+  First visit                   | link      | OK               | navigated to /first-visit.html
+  Book a trial                  | link      | OK               | navigated to /contact.html
+  Any                           | button    | OK               | DOM changed
+  Mon                           | button    | OK               | DOM changed
+  Tue                           | button    | OK               | DOM changed
+  Wed                           | button    | OK               | DOM changed
+  Thu                           | button    | OK               | DOM changed
+  Fri                           | button    | OK               | DOM changed
+  Sat                           | button    | OK               | DOM changed
+  Sun                           | button    | OK               | DOM changed
+  Any                           | button    | OK               | DOM changed
+  Beginner                      | button    | OK               | DOM changed
+  All levels                    | button    | OK               | DOM changed
+  Experienced                   | button    | OK               | DOM changed
+  Weekly timetable, scrollable  | clickable | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Weekly_timetable_scrollable-5.png
+  Classes                       | link      | OK               | current-page link (points at the page you are already on)
+  Memberships                   | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Memberships-6.png
+  First visit                   | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/First_visit-7.png
+  Book a trial                  | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Book_a_trial-8.png
+  Show all classes (after: Mon) | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Show_all_classes-9.png
+
+contact.html
+  control                                  | kind      | verdict          | detail
+  Skip to content                          | link      | OK               | navigated to /contact.html#main; DOM changed; focus moved to main#main; visually hidden until focused
+  Still Water, home                        | link      | OK               | navigated to /index.html
+  Home                                     | link      | OK               | navigated to /index.html
+  Classes                                  | link      | OK               | navigated to /classes.html
+  Teachers                                 | link      | OK               | navigated to /teachers.html
+  Memberships                              | link      | OK               | navigated to /memberships.html
+  First visit                              | link      | OK               | navigated to /first-visit.html
+  Book a trial                             | link      | OK               | current-page link (points at the page you are already on)
+  Name                                     | field     | OK               | accepts input; sent with its form
+  Email                                    | field     | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Email-10.png
+  Class                                    | select    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Class-11.png
+  Day                                      | select    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Day-12.png
+  Level                                    | select    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Level-13.png
+  Anything you would like the teacher to k | field     | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Anything_you_would_like_the_teacher_to_k-14.png
+  Request sample trial class               | button    | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Request_sample_trial_class-15.png
+  Classes                                  | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Classes-16.png
+  Memberships                              | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Memberships-17.png
+  First visit                              | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/First_visit-18.png
+  Book a trial                             | link      | OK               | current-page link (points at the page you are already on)
+
+first-visit.html
+  control                   | kind      | verdict          | detail
+  Skip to content           | link      | OK               | navigated to /first-visit.html#main; DOM changed; focus moved to main#main; visually hidden until focused
+  Still Water, home         | link      | OK               | navigated to /index.html
+  Home                      | link      | OK               | navigated to /index.html
+  Classes                   | link      | OK               | navigated to /classes.html
+  Teachers                  | link      | OK               | navigated to /teachers.html
+  Memberships               | link      | OK               | navigated to /memberships.html
+  First visit               | link      | OK               | current-page link (points at the page you are already on)
+  Book a trial              | link      | OK               | navigated to /contact.html
+  Beginner                  | link      | OK               | navigated to /classes.html
+  Book a sample trial class | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Book_a_sample_trial_class-19.png
+  Classes                   | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Classes-20.png
+  Memberships               | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Memberships-21.png
+  First visit               | link      | OK               | current-page link (points at the page you are already on)
+  Book a trial              | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Book_a_trial-22.png
+
+index.html
+  control                                      | kind      | verdict          | detail
+  Skip to content                              | link      | OK               | navigated to /index.html#main; DOM changed; focus moved to main#main; visually hidden until focused
+  Still Water, home                            | link      | OK               | current-page link (points at the page you are already on)
+  Home                                         | link      | OK               | current-page link (points at the page you are already on)
+  Classes                                      | link      | OK               | navigated to /classes.html
+  Teachers                                     | link      | OK               | navigated to /teachers.html
+  Memberships                                  | link      | OK               | navigated to /memberships.html
+  First visit                                  | link      | OK               | navigated to /first-visit.html
+  Book a trial                                 | link      | OK               | navigated to /contact.html
+  Book a sample trial class                    | link      | OK               | navigated to /contact.html
+  See the timetable                            | link      | OK               | navigated to /classes.html
+  Pause the circle animation                   | button    | OK               | DOM changed
+  Filter the full timetable by day and lev     | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Filter_the_full_timetable_by_day_and_lev-23.png
+  See the three sample plans                   | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/See_the_three_sample_plans-24.png
+  Read the first-visit guide                   | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Read_the_first_visit_guide-25.png
+  See sample plans                             | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/See_sample_plans-26.png
+  Classes                                      | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Classes-27.png
+  Memberships                                  | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Memberships-28.png
+  First visit                                  | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/First_visit-29.png
+  Book a trial                                 | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Book_a_trial-30.png
+  Play the circle animation (after: Pause the  | button    | OK               | DOM changed
+
+memberships.html
+  control             | kind      | verdict          | detail
+  Skip to content     | link      | OK               | navigated to /memberships.html#main; DOM changed; focus moved to main#main; visually hidden until focused
+  Still Water, home   | link      | OK               | navigated to /index.html
+  Home                | link      | OK               | navigated to /index.html
+  Classes             | link      | OK               | navigated to /classes.html
+  Teachers            | link      | OK               | navigated to /teachers.html
+  Memberships         | link      | OK               | current-page link (points at the page you are already on)
+  First visit         | link      | OK               | navigated to /first-visit.html
+  Book a trial        | link      | OK               | navigated to /contact.html
+  Ask about a drop-in | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Ask_about_a_drop_in-31.png
+  Ask about a pass    | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Ask_about_a_pass-32.png
+  Ask about monthly   | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Ask_about_monthly-33.png
+  Classes             | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Classes-34.png
+  Memberships         | link      | OK               | current-page link (points at the page you are already on)
+  First visit         | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/First_visit-35.png
+  Book a trial        | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Book_a_trial-36.png
+
+teachers.html
+  control           | kind      | verdict          | detail
+  Skip to content   | link      | OK               | navigated to /teachers.html#main; DOM changed; focus moved to main#main; visually hidden until focused
+  Still Water, home | link      | OK               | navigated to /index.html
+  Home              | link      | OK               | navigated to /index.html
+  Classes           | link      | OK               | navigated to /classes.html
+  Teachers          | link      | OK               | current-page link (points at the page you are already on)
+  Memberships       | link      | OK               | navigated to /memberships.html
+  First visit       | link      | OK               | navigated to /first-visit.html
+  Book a trial      | link      | OK               | navigated to /contact.html
+  Classes           | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Classes-37.png
+  Memberships       | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Memberships-38.png
+  First visit       | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/First_visit-39.png
+  Book a trial      | link      | UNREACHABLE      | covered by nothing; screenshot .lilac/controls/Book_a_trial-40.png
+
+Totals: OK 81, DEAD 0, DISABLED-FOREVER 0, BROKEN-LINK 0, PLACEHOLDER 0, UNREACHABLE 40, TOO-SMALL 0
+
+UNVERIFIED (not exercised by this tool)
+  external link destinations: https links to other sites were intercepted and validated, not fetched (no external network)
+  hover-only, long-press and drag-only controls: only click, toggle, typing and key presses are performed
+  controls inside iframes or shadow roots, and narrow (mobile) layouts: the sweep reads the top document at 1280 px; open menus that only exist on narrow screens are not seen
+  whether an effect is the RIGHT effect: an effect proves the control is wired, not that it does what its label promises; a human or test must judge that
+
+controls-test: 121 controls, 0 dead, 0 broken, 0 placeholder, 40 unreachable (67% operable)

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Corner Kiln: fictional sample site. example.com is a placeholder domain (ASSUMED). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url><loc>https://example.com/corner-kiln/</loc></url>
+<url><loc>https://example.com/corner-kiln/menu.html</loc></url>
+<url><loc>https://example.com/corner-kiln/bakes.html</loc></url>
+<url><loc>https://example.com/corner-kiln/visit.html</loc></url>
+<url><loc>https://example.com/corner-kiln/events.html</loc></url>
+<url><loc>https://example.com/corner-kiln/contact.html</loc></url>
+<url><loc>https://example.com/corner-kiln/privacy.html</loc></url>
+</urlset>

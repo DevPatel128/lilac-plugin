@@ -1,0 +1,170 @@
+/* Biscuit & Bowl (FICTIONAL SAMPLE): styles. Tokens first; dark mode swaps tokens only. Mobile-first, 360 to 1440 px. System fonts, no external requests. */
+:root{
+  --bg:#FBF3E4; --surface:#FFFBF2; --ink:#2B1D14; --muted:#5E4B3C;
+  --accent:#A63A1A; --on-accent:#FFF8EC; --honey:#E9B440; --on-honey:#2B1D14;
+  --line:#D9C3A0; --line-strong:#8A6F52; --shadow:#2B1D14;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:ui-rounded,"Avenir Next","Segoe UI",system-ui,sans-serif;
+  --r:14px; --gap:clamp(1rem,3vw,2rem);
+  /* motion tokens: mirror BRAND.md duration tokens (brand/tokens.css lives outside the deployed site/ folder) */
+  --duration-fast:120ms; --duration-quick:200ms; --duration-base:300ms; --duration-enter:500ms; --duration-slow:600ms;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1D1611; --surface:#2A2019; --ink:#F6EBDA; --muted:#CDB9A0;
+  --accent:#F2987A; --on-accent:#1D1611; --honey:#E9B440; --on-honey:#2B1D14;
+  --line:#4A3A2D; --line-strong:#A58A6C; --shadow:#000;
+}}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.6 var(--sans)}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,6vw,3.6rem);max-width:18ch}
+h2{font-size:clamp(1.4rem,3.5vw,2rem)} h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--accent);text-underline-offset:.2em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px var(--honey)}
+.wrap{width:min(100% - 2rem,70rem);margin-inline:auto}
+.narrow{max-width:44rem}
+.small{font-size:.9rem;color:var(--muted)}
+.skip{position:absolute;left:.5rem;top:-4rem;background:var(--ink);color:var(--bg);padding:.6rem 1rem;z-index:10;border-radius:8px}
+.skip:focus{top:.5rem}
+/* header: nav is a plain wrapping list, works with no JS */
+.top{border-bottom:2px solid var(--ink);background:var(--surface)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1.5rem;padding-block:.75rem}
+.brand{display:flex;align-items:center;min-height:44px;gap:.5rem;font:700 1.35rem var(--serif);color:var(--ink);text-decoration:none}
+.brand em{color:var(--accent);font-style:normal}
+.ico{width:2rem;height:2rem;fill:var(--accent)} .ico .stroke{fill:none;stroke:var(--on-accent);stroke-width:3;stroke-linecap:round}
+nav ul{display:flex;flex-wrap:wrap;gap:.25rem .5rem;list-style:none;margin:0;padding:0}
+nav a{display:block;padding:.5rem .75rem;min-height:44px;line-height:1.7;color:var(--ink);text-decoration:none;border-radius:999px}
+nav a:hover{background:var(--line)}
+nav a[aria-current=page]{background:var(--ink);color:var(--bg)}
+/* hero */
+.hero{display:grid;gap:var(--gap);padding-block:clamp(2rem,6vw,4.5rem);align-items:center}
+.stamp{display:inline-block;border:2px dashed var(--accent);color:var(--accent);padding:.25rem .8rem;border-radius:999px;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;transform:rotate(-2deg)}
+.lead{font-size:1.2rem;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.art{width:100%;max-width:26rem;height:auto;justify-self:center}
+.s-shadow{fill:var(--line)} .s-biscuit circle{fill:var(--honey);stroke:var(--ink);stroke-width:3}
+.s-dots circle{fill:var(--ink)} .s-bowl{fill:var(--accent);stroke:var(--ink);stroke-width:3}
+.s-band{fill:var(--on-accent)} .s-label{font:700 15px var(--serif);letter-spacing:.14em;fill:var(--ink)}
+/* buttons */
+.btn{display:inline-block;font:700 1rem var(--sans);min-height:44px;padding:.65rem 1.3rem;border:2px solid var(--ink);border-radius:var(--r);background:var(--accent);color:var(--on-accent);text-decoration:none;cursor:pointer;box-shadow:4px 4px 0 var(--shadow);transition:transform var(--duration-fast)}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--shadow)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--shadow)}
+.btn.ghost{background:var(--surface);color:var(--ink)}
+.btn.small{padding:.4rem .9rem;font-size:.95rem}
+.btn[aria-pressed=true]{background:var(--honey);color:var(--on-honey)}
+/* sections */
+.band{background:var(--honey);color:var(--on-honey);border-block:2px solid var(--ink);padding-block:2.5rem}
+.band a{color:var(--on-honey)}
+.picks{list-style:none;margin:1.5rem 0;padding:0;display:grid;gap:1rem}
+.picks a{display:grid;gap:.15rem;padding:1rem 1.2rem;background:var(--surface);color:var(--ink);border:2px solid var(--ink);border-radius:var(--r);text-decoration:none;box-shadow:4px 4px 0 var(--shadow)}
+.picks strong{font:700 1.3rem var(--serif)}
+.tag{display:inline-block;justify-self:start;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:var(--bg);padding:.1rem .6rem;border-radius:4px}
+.split{display:grid;gap:var(--gap);padding-block:3rem}
+.pagehead{padding-block:clamp(1.5rem,5vw,3.5rem) 1rem}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:var(--r);padding:1.25rem;box-shadow:4px 4px 0 var(--shadow);align-self:start}
+.note{border-left:6px solid var(--honey);padding:.5rem 1rem;background:var(--surface)}
+/* products */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 .5rem}
+.chip{font:600 1rem var(--sans);min-height:44px;padding:.4rem 1.1rem;border:2px solid var(--ink);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.plan-grid{display:grid;gap:var(--gap);margin-top:1rem}
+.products{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.product{background:var(--surface);border:2px solid var(--ink);border-radius:var(--r);padding:1.1rem;box-shadow:4px 4px 0 var(--shadow);scroll-margin-top:1rem}
+.product[hidden]{display:none}
+.product h3{margin-top:.5rem}
+dl{margin:0 0 .75rem} .product dl div{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--line-strong);padding:.25rem 0}
+dt{color:var(--muted)} dd{margin:0;font-weight:600}
+.product small{font-weight:400;color:var(--muted)}
+.ing{font-size:.95rem}
+.summary{background:var(--surface);border:2px dashed var(--accent);border-radius:var(--r);padding:1.1rem;align-self:start}
+.summary ul{list-style:none;margin:0 0 1rem;padding:0}
+.summary li{display:flex;justify-content:space-between;gap:1rem;padding:.3rem 0;border-bottom:1px solid var(--line)}
+.total{display:flex;justify-content:space-between;font-size:1.2rem}
+/* progressive enhancement: js-only things hidden until script flags the page */
+.js-only{display:none} .js .js-only{display:revert}
+.js .nojs-note{display:none} .nojs-note{background:var(--surface);border:2px dashed var(--line-strong);border-radius:var(--r);padding:.6rem 1rem}
+/* steps, glossary, faq */
+.steps{list-style:none;counter-reset:s;margin:0 0 2rem;padding:0;display:grid;gap:1.25rem}
+.steps li{counter-increment:s;position:relative;background:var(--surface);border:2px solid var(--ink);border-radius:var(--r);padding:1.25rem 1.25rem 1.25rem 4.5rem;box-shadow:4px 4px 0 var(--shadow)}
+.steps li::before{content:counter(s);position:absolute;left:1rem;top:1rem;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--honey);color:var(--on-honey);border:2px solid var(--ink);font:700 1.3rem/2.1rem var(--serif);text-align:center}
+.gloss dt{font:700 1.1rem var(--serif);color:var(--ink);margin-top:1rem} .gloss dd{font-weight:400;color:var(--muted)}
+.faq details{background:var(--surface);border:2px solid var(--ink);border-radius:var(--r);margin-bottom:.75rem;padding:.25rem 1rem}
+.faq summary{cursor:pointer;font-weight:700;padding:.7rem 0;min-height:44px}
+/* form */
+.field{margin-bottom:1.1rem}
+label{display:block;font-weight:700;margin-bottom:.3rem}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:2px solid var(--line-strong);border-radius:10px;padding:.65rem .8rem;min-height:44px}
+[aria-invalid=true]{border-color:var(--accent);border-width:3px}
+.err{color:var(--accent);font-weight:600;margin:.3rem 0 0;min-height:0}
+.err:empty{display:none}
+.result{background:var(--honey);color:var(--on-honey);border:2px solid var(--ink);border-radius:var(--r);padding:1rem 1.2rem;margin-bottom:1.5rem;box-shadow:4px 4px 0 var(--shadow)}
+.result[hidden]{display:none}
+.errsum{background:var(--surface);border:3px solid var(--accent);border-radius:var(--r);padding:.75rem 1.2rem;margin-bottom:1.5rem}
+.errsum[hidden]{display:none}
+.errsum h2{font-size:1.2rem;margin:0 0 .4rem}
+.errsum ul{margin:0;padding-left:1.2rem}
+.errsum a{display:inline-block;padding:.4rem 0;min-height:44px}
+.plan-line a{display:inline-block;padding:.6rem 0;min-height:44px}
+.foot{margin-top:4rem;border-top:2px solid var(--ink);background:var(--surface);padding-block:1.5rem}
+@media (min-width:720px){
+  .hero{grid-template-columns:1.2fr .8fr}
+  .picks{grid-template-columns:repeat(3,1fr)}
+  .split{grid-template-columns:1fr 1fr}
+  .products{grid-template-columns:1fr 1fr}
+  .plan-grid{grid-template-columns:1fr 20rem}
+  .summary{position:sticky;top:1rem}
+  .steps{grid-template-columns:repeat(3,1fr)} .steps li{padding:4.5rem 1.25rem 1.25rem}
+}
+@media (min-width:1100px){.products{grid-template-columns:repeat(3,1fr)} .plan-grid{grid-template-columns:1fr 18rem}}
+/* MOTION (expressive but accessible). Only transform and opacity animate. Content is visible with no JS: hidden start states exist only on .rv, a class motion.js adds itself. */
+.btn:hover,.chip:hover{transform:translate(-1px,-2px)}
+.chip{transition:transform var(--duration-fast)} .chip:active{transform:scale(.96)}
+.picks a,.product,.card,.steps li{transition:transform var(--duration-quick)}
+.picks a:hover,.product:hover,.card:hover,.steps li:hover{transform:translate(-2px,-3px);box-shadow:6px 7px 0 var(--shadow)}
+.picks a:active,.product:active{transform:translate(1px,1px);box-shadow:3px 3px 0 var(--shadow)}
+.brand .ico{transition:transform var(--duration-base)} .brand:hover .ico{transform:rotate(-14deg) scale(1.1)}
+.total strong{font-variant-numeric:tabular-nums;display:inline-block}
+/* nav underline: one bar moved with translate and scaleX (JS sets --x --y --w) */
+nav ul{position:relative}
+.nav-ind{position:absolute;left:0;top:0;width:100px;height:3px;border-radius:2px;background:var(--accent);transform:translate(var(--x,0),var(--y,0)) scaleX(var(--w,0));transform-origin:left;pointer-events:none;opacity:0}
+.nav-ind.ready{opacity:1;transition:transform var(--duration-base) cubic-bezier(.3,.7,.2,1)}
+/* reveal on scroll (class added by motion.js) */
+.rv{opacity:0;transform:translateY(18px);transition:opacity var(--duration-enter) ease-out,transform var(--duration-enter) cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+/* entrances, only when JS is on; backwards fill so the resting style is the normal one */
+.js body{animation:fade var(--duration-base) ease-out}
+.js .hero-text>*,.js .pagehead>*{animation:rise var(--duration-slow) cubic-bezier(.2,.7,.2,1) backwards}
+.js .hero-text>:nth-child(1),.js .pagehead>:nth-child(1){animation-delay:.1s}
+.js .hero-text>:nth-child(2),.js .pagehead>:nth-child(2){animation-delay:.2s}
+.js .hero-text>:nth-child(3){animation-delay:.3s}
+.js .hero-text>:nth-child(4){animation-delay:.4s}
+.js .hero-text>:nth-child(5){animation-delay:.5s}
+.js .hero-art{animation:pop var(--duration-slow) var(--duration-base) cubic-bezier(.2,.8,.3,1.2) backwards}
+.js.leaving body{opacity:0;transition:opacity var(--duration-quick)}
+.pop{animation:pop var(--duration-base) ease-out backwards}
+.slide{animation:slide var(--duration-base) cubic-bezier(.2,.7,.2,1) backwards}
+.bump{animation:bump var(--duration-enter) ease-out}
+.product.leaving{opacity:0;transform:scale(.95);transition:opacity var(--duration-quick),transform var(--duration-quick);pointer-events:none}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}}
+@keyframes pop{from{opacity:0;transform:scale(.92) translateY(8px)}}
+@keyframes slide{from{opacity:0;transform:translateX(-16px)}}
+@keyframes bump{40%{transform:scale(1.12)}}
+/* looping details: kibble bounce (home), walking paw prints (how it works). Pause button is in the page. */
+.js .k{animation:hop 2.4s ease-in-out infinite;animation-delay:calc(var(--n) * -.45s)}
+@keyframes hop{0%,100%{transform:translateY(0)}35%{transform:translateY(-9px)}55%{transform:translateY(0)}}
+.paws{display:block;width:100%;max-width:38rem;height:auto;margin:0 0 1.5rem;fill:var(--accent)}
+.js .paw{animation:step 5.4s ease-in-out infinite;animation-delay:calc(var(--n) * .6s)}
+@keyframes step{0%{opacity:0;transform:translateY(6px)}12%,62%{opacity:1;transform:none}82%,100%{opacity:0}}
+.motion-paused .k,.motion-paused .paw{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1!important;transform:none!important}
+  [data-pause]{display:none!important}
+}
+
+/* Tap target: keep the inline link at least 44px tall without changing the layout around it. */
+.more a{display:inline-block;padding:.7rem 0;min-height:44px}

@@ -1,0 +1,19 @@
+### operations/plugin/scripts/foundation.mjs drift product-growth/media/demo-sites/fitness
+foundation drift: 0 error(s), 0 warning(s)
+### operations/plugin/scripts/foundation.mjs check product-growth/media/demo-sites/fitness
+foundation: 0 error(s), 0 warning(s)
+### operations/plugin/scripts/foundation.mjs status product-growth/media/demo-sites/fitness
+NONE: no approval yet. Run /lilac:foundation.
+### operations/plugin/scripts/hosting.mjs check --project product-growth/media/demo-sites/fitness
+hosting: 0 problem(s)
+### operations/plugin/scripts/qa.mjs product-growth/media/demo-sites/fitness
+qa: 0 error(s), 0 warning(s), 1 unverified
+### operations/plugin/scripts/qa-browser.mjs product-growth/media/demo-sites/fitness
+  screen reader output, real touch, slow networks, other browsers: only headless Chrome on a local server was driven
+qa-browser: 0 error(s), 0 warning(s), 3 unverified
+### kit/operations/scripts/techdocs.mjs product-growth/media/demo-sites/fitness --check
+techdocs: warn: SHOWCASE.md still has [YOUR ...] placeholders: fill or delete before posting
+techdocs: 2 parts, 3 languages, 0 problem(s)
+### operations/plugin/scripts/controls-test.mjs product-growth/media/demo-sites/fitness
+Totals: OK 81, DEAD 0, DISABLED-FOREVER 0, BROKEN-LINK 0, PLACEHOLDER 0, UNREACHABLE 40, TOO-SMALL 0
+controls-test: 121 controls, 0 dead, 0 broken, 0 placeholder, 40 unreachable (67% operable)

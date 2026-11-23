@@ -1,0 +1,8 @@
+{
+  "description": "Optional learning hook. INERT until you run `learn on`: it records only task text, outcome, failed checks and rework count to ~/.lilac, redacted. No network. See hooks/README.md.",
+  "hooks": {
+    "Stop": [
+      { "hooks": [ { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/learning/capture.mjs\" lilac" } ] }
+    ]
+  }
+}

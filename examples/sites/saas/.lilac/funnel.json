@@ -1,0 +1,31 @@
+{
+  "goal": "demo",
+  "customer": "A visitor who wants to try the demo request of a fictional product (fictional demo, no real customers)",
+  "entryPages": [
+    "index.html"
+  ],
+  "maxClicks": 3,
+  "goalPage": "demo.html",
+  "goalControl": {
+    "selector": "button[type=submit]",
+    "text": "Send demo request"
+  },
+  "steps": [
+    {
+      "stage": "ready",
+      "page": "demo.html",
+      "control": {
+        "selector": "button[type=submit]",
+        "text": "Send demo request"
+      }
+    }
+  ],
+  "confirmation": {
+    "page": "thanks.html",
+    "text": "nothing was sent"
+  },
+  "successMetric": {
+    "name": "UNKNOWN: a demo site has no real visitors",
+    "target": "OWNER FILLS THIS FROM REAL DATA"
+  }
+}

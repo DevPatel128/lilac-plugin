@@ -1,0 +1,31 @@
+{
+  "goal": "book",
+  "customer": "A visitor who wants to try the booking flow of a fictional cafe (fictional demo, no real customers)",
+  "entryPages": [
+    "index.html"
+  ],
+  "maxClicks": 3,
+  "goalPage": "contact.html",
+  "goalControl": {
+    "selector": "button[type=submit]",
+    "text": "Send booking"
+  },
+  "steps": [
+    {
+      "stage": "ready",
+      "page": "contact.html",
+      "control": {
+        "selector": "button[type=submit]",
+        "text": "Send booking"
+      }
+    }
+  ],
+  "confirmation": {
+    "page": "thanks.html",
+    "text": "nothing was sent"
+  },
+  "successMetric": {
+    "name": "UNKNOWN: a demo site has no real visitors",
+    "target": "OWNER FILLS THIS FROM REAL DATA"
+  }
+}

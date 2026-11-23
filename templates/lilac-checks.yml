@@ -1,0 +1,35 @@
+# Lilac checks for GitHub Actions. Copied to .github/workflows/lilac-checks.yml by `hosting.mjs choose`; never overwritten.
+# STATUS: NOT yet run on GitHub. UNVERIFIED until this workflow has been pushed and a run has passed.
+# No secrets and no deploy step: it only reads the repository and runs Lilac's local checks.
+# Each step runs only when its script exists in the project.
+# Action majors verified 2026-11-21 from the official release pages:
+#   actions/checkout v7 (latest v7.0.1)  https://github.com/actions/checkout/releases/latest
+#   actions/setup-node v7 (latest v7.1.0) https://github.com/actions/setup-node/releases/latest
+name: lilac-checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - name: Tech docs are current
+        if: ${{ hashFiles('scripts/techdocs.mjs') != '' }}
+        run: node scripts/techdocs.mjs . --check
+      - name: QA scan of the built site
+        if: ${{ hashFiles('scripts/qa.mjs') != '' }}
+        run: node scripts/qa.mjs .
+      - name: Hosting config check
+        if: ${{ hashFiles('scripts/hosting.mjs') != '' }}
+        run: node scripts/hosting.mjs check --project .
+      # Skipped when the script is absent; continue-on-error because a runner without Chrome cannot run it.
+      - name: Browser QA
+        if: ${{ hashFiles('scripts/qa-browser.mjs') != '' }}
+        continue-on-error: true
+        run: node scripts/qa-browser.mjs .

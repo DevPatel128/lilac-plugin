@@ -1,0 +1,35 @@
+{
+  "tasks": [
+    {
+      "name": "funnel: main path",
+      "startPage": "/",
+      "steps": [
+        {
+          "click": "Enquire"
+        },
+        {
+          "type": "Name",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "type": "Email",
+          "text": "name@example.test"
+        },
+        {
+          "type": "Project type",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "type": "About the project",
+          "text": "Hello, this is a simulated visitor."
+        },
+        {
+          "click": "Send enquiry (demo)"
+        },
+        {
+          "expectText": "nothing was sent"
+        }
+      ]
+    }
+  ]
+}
