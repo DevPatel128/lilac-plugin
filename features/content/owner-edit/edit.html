@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Edit content</title>
+<style>body{font:16px/1.5 system-ui,sans-serif;max-width:46rem;margin:2rem auto;padding:0 1rem}label{display:block;margin:.5rem 0 .1rem;font-weight:600}input,textarea{width:100%;font:inherit;padding:.4rem;box-sizing:border-box}textarea{min-height:16rem}fieldset{margin:1rem 0}button{font:inherit;padding:.5rem 1rem;margin:.25rem .25rem .25rem 0}.note{background:#f4f0ff;padding:.75rem;border-radius:6px}</style></head>
+<body>
+<h1>Edit content</h1>
+<p class="note">Works offline in your browser. Nothing is uploaded and there is no login here. Open one file from your <code>content</code> folder, change it, press Download, then put the downloaded file back in <code>content</code> (commit it, or paste it where your host keeps files). Protect this <code>/admin</code> folder at your host (password or access rule) or delete it from the published site.</p>
+<p><label for="file">1. Open a file (.json or .md)</label><input id="file" type="file" accept=".json,.md,.txt"></p>
+<div id="editor" hidden>
+  <h2>2. Change it</h2>
+  <div id="form"></div>
+  <p><button id="add" type="button" hidden>Add a row</button></p>
+  <h2>3. Download</h2>
+  <p><button id="dl" type="button">Download the changed file</button> <span id="msg" role="status"></span></p>
+</div>
+<script>
+(function () {
+  var $ = function (i) { return document.getElementById(i); }, name = '', mode = '', data = null, rows = [], keys = [];
+  function el(t, p, txt) { var e = document.createElement(t); if (p) for (var k in p) e[k] = p[k]; if (txt != null) e.textContent = txt; return e; }
+  function flatObj(o) { return o && typeof o === 'object' && !Array.isArray(o) && Object.keys(o).every(function (k) { return o[k] === null || typeof o[k] !== 'object'; }); }
+  function listOf(d) { if (Array.isArray(d)) return { arr: d, wrap: false }; if (d && Array.isArray(d.items)) return { arr: d.items, wrap: true }; return null; }
+  function field(k, v, onc) { var f = el('div'), id = 'f' + Math.random().toString(36).slice(2); f.appendChild(el('label', { htmlFor: id }, k)); var i = el('input', { id: id, value: v == null ? '' : String(v) }); i.addEventListener('input', function () { onc(i.value); }); f.appendChild(i); return f; }
+  function draw() {
+    var f = $('form'); f.textContent = ''; $('add').hidden = true;
+    if (mode === 'md') { var t = el('textarea', { value: data, 'aria-label': 'Text' }); t.addEventListener('input', function () { data = t.value; }); f.appendChild(t); return; }
+    var l = listOf(data);
+    if (l && l.arr.every(flatObj)) {
+      mode = 'list'; keys = []; l.arr.forEach(function (r) { Object.keys(r).forEach(function (k) { if (keys.indexOf(k) < 0) keys.push(k); }); });
+      if (!keys.length) keys = ['name', 'date', 'price'];
+      l.arr.forEach(function (r, n) { var fs = el('fieldset'); fs.appendChild(el('legend', null, 'Row ' + (n + 1)));
+        keys.forEach(function (k) { fs.appendChild(field(k, r[k], function (v) { r[k] = v; })); });
+        var rm = el('button', { type: 'button' }, 'Remove row'); rm.addEventListener('click', function () { l.arr.splice(n, 1); draw(); }); fs.appendChild(rm); f.appendChild(fs); });
+      $('add').hidden = false; $('add').onclick = function () { var r = {}; keys.forEach(function (k) { r[k] = ''; }); l.arr.push(r); draw(); }; return;
+    }
+    if (flatObj(data)) { mode = 'obj'; Object.keys(data).forEach(function (k) { f.appendChild(field(k, data[k], function (v) { data[k] = v; })); }); return; }
+    mode = 'raw'; var r = el('textarea', { value: JSON.stringify(data, null, 2), 'aria-label': 'JSON' }); r.addEventListener('input', function () { rawText = r.value; }); rawText = r.value; f.appendChild(r);
+  }
+  var rawText = '';
+  $('file').addEventListener('change', function () {
+    var file = this.files[0]; if (!file) return; name = file.name; var rd = new FileReader();
+    rd.onload = function () {
+      try { if (/\.json$/i.test(name)) { data = JSON.parse(rd.result); mode = 'json'; } else { data = String(rd.result); mode = 'md'; } }
+      catch (e) { $('msg').textContent = 'That file is not valid JSON: ' + e.message; return; }
+      $('editor').hidden = false; $('msg').textContent = ''; draw();
+    }; rd.readAsText(file);
+  });
+  $('dl').addEventListener('click', function () {
+    var out;
+    if (mode === 'md') out = data; else { try { out = JSON.stringify(mode === 'raw' ? JSON.parse(rawText) : data, null, 2) + '\n'; } catch (e) { $('msg').textContent = 'Not valid JSON: ' + e.message; return; } }
+    var a = el('a', { href: URL.createObjectURL(new Blob([out], { type: 'text/plain' })), download: name }); document.body.appendChild(a); a.click(); a.remove();
+    $('msg').textContent = 'Downloaded ' + name + '. Put it in your content folder.';
+  });
+})();
+</script>
+</body></html>

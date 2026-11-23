@@ -1,6 +1,9 @@
 {
-  "description": "Optional learning hook. INERT until you run `learn on`: it records only task text, outcome, failed checks and rework count to ~/.lilac, redacted. No network. See hooks/README.md.",
+  "description": "Approval guard (PreToolUse) blocks site-code writes and deploy commands until the approvals this severity needs are current; it only acts inside a Lilac project (.lilac/state.json). Optional learning hook (Stop) is INERT until you run `learn on`: it records only task text, outcome, failed checks and rework count to ~/.lilac, redacted. No network. See hooks/README.md.",
   "hooks": {
+    "PreToolUse": [
+      { "matcher": "Write|Edit|MultiEdit|Bash", "hooks": [ { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/approval-guard.mjs\"" } ] }
+    ],
     "Stop": [
       { "hooks": [ { "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/learning/capture.mjs\" lilac" } ] }
     ]

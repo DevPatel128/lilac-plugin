@@ -1,0 +1,11 @@
+id: music
+name: Music artist pack
+version: 0.1.0
+last_verified: 2026-11-23
+expires: 2027-02-21
+sources:
+  - https://developer.mozilla.org/en-US/docs/Web/API/Media_Session_API
+  - https://wavesurfer.xyz/
+  - https://developer.spotify.com/documentation/embeds
+  - https://help.bandsintown.com/en/articles/9186477-api-documentation
+  - https://shopify.dev/docs/apps/build/online-store/buy-button

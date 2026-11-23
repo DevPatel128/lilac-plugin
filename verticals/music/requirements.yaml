@@ -1,0 +1,22 @@
+# Default EARS requirements for a music artist site. Status stays proposed until the owner approves.
+- id: R-MUSIC-1
+  status: proposed
+  text: WHEN a visitor clicks Play on any track THE SITE SHALL start audio in one click without leaving the page.
+- id: R-MUSIC-2
+  status: proposed
+  text: WHEN a visitor navigates to another page THE SITE SHALL keep the current track playing without a gap.
+- id: R-MUSIC-3
+  status: proposed
+  text: WHEN a page loads THE SITE SHALL NOT start audio automatically.
+- id: R-MUSIC-4
+  status: proposed
+  text: WHEN no tour dates are supplied THE SITE SHALL show "UNKNOWN: no tour dates supplied" and SHALL NOT show invented dates.
+- id: R-MUSIC-5
+  status: proposed
+  text: WHEN a visitor uses the keyboard THE SITE SHALL toggle play/pause with Space or K and show a visible focus ring.
+- id: R-MUSIC-6
+  status: proposed
+  text: WHEN a visitor submits the mailing-list form THE SITE SHALL state that a confirmation email must be clicked (double opt-in) before any mail is sent.
+- id: R-MUSIC-7
+  status: proposed
+  text: WHEN the visitor prefers reduced motion THE SITE SHALL not animate the waveform or page swap.

@@ -20,4 +20,4 @@ Never: deploy, send email, post publicly, spend money, merge protected paths or 
 
 Learns only from this user's own records under ~/.lilac/agents/lilac-release/learned/ (never shared by default).
 
-Generated from Lilac v0.1.0.
+Generated from Lilac v0.1.2.

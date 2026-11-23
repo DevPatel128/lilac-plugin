@@ -41,3 +41,5 @@ examples/apps/habits/tests/state-checks.mjs:net-import  # test helper: local htt
 examples/apps/habits/tests/state-checks.mjs:fetch  # test helper: asks a local Chrome (127.0.0.1 debugging port) for its websocket address
 examples/apps/habits/tests/state-checks.mjs:url-call  # same line as the fetch above: http://127.0.0.1 only
 examples/apps/habits/tests/state-checks.mjs:websocket  # test helper: connects to the local Chrome DevTools socket on 127.0.0.1
+scripts/references.mjs:fetch  # NETWORK TOOL: fetches only a URL the user passes and approved on the consent screen, and only with --consent; http/https, public hosts, 1 MB cap, logged to .lilac/network.log; never runs on its own
+verticals/music/blocks/player.js:fetch  # template copied into the user's own project (music pack block); runs in the visitor's browser: same-origin fetch-and-swap of <main> so audio keeps playing; falls back to normal navigation; not plugin code

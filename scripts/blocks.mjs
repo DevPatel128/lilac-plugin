@@ -5,12 +5,15 @@
 //        node scripts/blocks.mjs assemble <dir> --pages <spec.json> --direction <name>   build static example pages into <dir>/site/ (deterministic)
 //        node scripts/blocks.mjs check [--no-demo]                         verify the library, then assemble one demo per direction and run the gates
 // Library: operations/plugin/blocks/<block>/{block.html,block.css,[block.js],block.md}, blocks/_base/, blocks/directions/<name>/{tokens.json,direction.css}.
+//        node scripts/blocks.mjs strip <siteDir>                           remove every data-req="..." attribute from the .html files under <siteDir> (production; idempotent; symlinks never followed)
+//        node scripts/blocks.mjs reqs <siteDir> [--json]                   list each data-req id and the html files (relative to <siteDir>) that carry it; --json prints {"R-004":["index.html"]}
+// Requirement tags: a block entry in the pages spec may carry "req":"R-004"; assemble then puts data-req="R-004" on that block's root element (dev builds). Run strip before shipping.
 // Template syntax in block.html: {{slot}} (escaped), {{slot|default}}, {{#each list}}..{{/each}} with {{.field}} {{.}} {{@n}} (1-based) {{@i}}, {{#if x}}, {{#unless x}}.
 // Offline and dependency-free. Writes only into <dir> (add, assemble) or a temp dir (check demos). Env LILAC_BLOCKS_DIR points at another library (used by tests).
 // check runs qa.mjs, qa-browser.mjs and controls-test.mjs on each demo; the two browser tools print SKIPPED when no Chrome exists and then count as skipped, not passed.
 // shortcut: colour check knows hex, rgb/hsl/hwb/lab/lch/oklab/oklch and 17 colour names; upgrade when a block needs wider syntax.
 // shortcut: assemble puts site-header and consent before <main> and footer after it; other layouts need hand editing.
-import { existsSync, readFileSync, readdirSync, statSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, lstatSync, statSync, mkdtempSync, mkdirSync, rmSync } from 'node:fs';
 import { scoped } from '../lib/safe-fs.mjs';
 import { join, resolve, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -160,7 +163,8 @@ export function assemble(dir, specFile, direction) {
       if (variant) slots.variant = variant;
       if (name === 'site-header') for (const l of slots.links ?? []) { if (l.current_on !== undefined) { if (l.current_on === page.file) l.current = 'yes'; delete l.current_on; } }
       if (name === 'testimonial-placeholder' && !/SAMPLE/.test(String(slots.quote ?? ''))) throw new Error(`page ${page.file}: testimonial-placeholder quote must contain the word SAMPLE`);
-      const html = renderBlock(name, slots);
+      let html = renderBlock(name, slots);
+      if (entry.req !== undefined) html = tagReq(html, entry.req);
       (PRE_MAIN.has(name) ? pre : POST_MAIN.has(name) ? post : main).push(html);
       if (!used.includes(name)) used.push(name);
     }
@@ -198,6 +202,39 @@ ${js.join('\n')}
     w(join(site, page.file), doc); written.push(page.file);
   }
   return written;
+}
+
+// ---- requirement tags (data-req)
+const REQ_ID = /^[A-Za-z][\w.-]{0,31}$/;
+const TAG = /<[a-zA-Z][^\s>\/]*(?:"[^"]*"|'[^']*'|[^'">])*>/g; // only attributes inside tags are touched, never text or script bodies
+const REQ_ATTR = /\sdata-req=(?:"([^"]*)"|'([^']*)')/g;
+const tagReq = (html, req) => { if (!REQ_ID.test(String(req))) throw new Error(`req "${req}" must look like R-004 (letters, digits, . _ -)`); return html.replace(/<[a-zA-Z][\w-]*/, (m) => `${m} data-req="${req}"`); };
+// shortcut: html files are found by extension .html/.htm, symlinked files and folders are skipped silently; node_modules is skipped.
+function htmlFiles(root, rel = '') {
+  const out = [];
+  for (const e of readdirSync(join(root, rel), { withFileTypes: true }).sort((a, b) => (a.name < b.name ? -1 : 1))) {
+    const r = rel ? `${rel}/${e.name}` : e.name;
+    if (e.isSymbolicLink()) continue;
+    if (e.isDirectory()) { if (e.name !== 'node_modules') out.push(...htmlFiles(root, r)); }
+    else if (e.isFile() && /\.html?$/i.test(e.name)) out.push(r);
+  }
+  return out;
+}
+export function strip(dir) {
+  const root = resolve(dir); if (!isDir(root) || lstatSync(root).isSymbolicLink()) throw new Error(`folder not found: ${root}`);
+  const W = scoped(root, { throws: true }); let files = 0, attrs = 0;
+  for (const f of htmlFiles(root)) {
+    const src = read(join(root, f)); let n = 0;
+    const out = src.replace(TAG, (t) => t.replace(REQ_ATTR, () => { n++; return ''; }));
+    if (n) { W.write(join(root, f), out); files++; attrs += n; }
+  }
+  return { files, attrs };
+}
+export function reqs(dir) {
+  const root = resolve(dir); if (!isDir(root) || lstatSync(root).isSymbolicLink()) throw new Error(`folder not found: ${root}`);
+  const map = {};
+  for (const f of htmlFiles(root)) for (const t of read(join(root, f)).match(TAG) ?? []) for (const m of t.matchAll(REQ_ATTR)) { const id = m[1] ?? m[2]; (map[id] ??= []); if (!map[id].includes(f)) map[id].push(f); }
+  return Object.fromEntries(Object.keys(map).sort().map((k) => [k, map[k]]));
 }
 
 // ---- check
@@ -312,7 +349,18 @@ function main() {
     catch (e) { die(e.message, 1); }
     return;
   }
+  if (cmd === 'strip' || cmd === 'reqs') {
+    if (!pos[0]) die(`usage: ${cmd} <siteDir>${cmd === 'reqs' ? ' [--json]' : ''}`);
+    try {
+      if (cmd === 'strip') { const r = strip(pos[0]); console.log(`blocks: stripped ${r.attrs} data-req attribute(s) from ${r.files} file(s)`); return; }
+      const m = reqs(pos[0]);
+      if (rest.includes('--json')) console.log(JSON.stringify(m));
+      else if (!Object.keys(m).length) console.log('blocks: no data-req tags found');
+      else for (const [k, v] of Object.entries(m)) console.log(`${k}  ${v.join(', ')}`);
+    } catch (e) { die(e.message, 1); }
+    return;
+  }
   if (cmd === 'check') return check(rest.includes('--no-demo'));
-  die('usage: list | add <dir> <block> [--direction name] | assemble <dir> --pages <spec.json> --direction <name> | check [--no-demo]');
+  die('usage: list | add <dir> <block> [--direction name] | assemble <dir> --pages <spec.json> --direction <name> | strip <siteDir> | reqs <siteDir> [--json] | check [--no-demo]');
 }
 if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) main();

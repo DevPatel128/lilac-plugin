@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Artist</title>
+<link rel="stylesheet" href="player.css">
+</head>
+<body>
+<a href="#swap" class="skip">Skip to content</a>
+<nav aria-label="Main"><a href="index.html">Home</a> <a href="tour.html">Tour</a></nav>
+<!-- Swapped region: page changes replace only this element. -->
+<main id="swap" tabindex="-1">
+  <h1>Artist name</h1>
+  <ul id="tracks"></ul>
+  <canvas id="wave" width="600" height="80" role="img" aria-label="Waveform of the current track"></canvas>
+  <div id="tour"></div>
+</main>
+<!-- Persistent player: lives OUTSIDE #swap so audio survives page changes. No autoplay. -->
+<div id="player" role="region" aria-label="Audio player">
+  <audio id="audio" preload="none"></audio>
+  <button id="play" type="button" aria-label="Play">Play</button>
+  <span id="now" aria-live="polite">UNKNOWN: no audio supplied</span>
+</div>
+<script src="waveform.js"></script>
+<script src="tour.js"></script>
+<script src="player.js"></script>
+</body>
+</html>

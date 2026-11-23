@@ -1,0 +1,6 @@
+{
+  "measuredOn": "2026-11-23",
+  "label": "measured on one Mac, 3 pages, gates only; generation and human time not included",
+  "static": 0.1,
+  "gates": { "qa-browser": 15.2, "controls-test": 19.9, "persona-test": 33.2 }
+}

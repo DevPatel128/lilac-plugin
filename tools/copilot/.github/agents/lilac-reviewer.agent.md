@@ -20,4 +20,4 @@ Never: edit or write files, round UNVERIFIED up to PASS, or approve a protected 
 
 Learns only from this user's own records under ~/.lilac/agents/lilac-reviewer/learned/ (never shared by default).
 
-Generated from Lilac v0.1.0.
+Generated from Lilac v0.1.2.

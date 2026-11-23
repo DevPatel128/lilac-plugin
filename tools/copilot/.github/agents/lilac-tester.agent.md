@@ -20,4 +20,4 @@ Never: edit or write files, fix a failing test, change a check to make it pass, 
 
 Learns only from this user's own records under ~/.lilac/agents/lilac-tester/learned/ (never shared by default).
 
-Generated from Lilac v0.1.0.
+Generated from Lilac v0.1.2.

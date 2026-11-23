@@ -1,0 +1,4 @@
+# Default requirements. Status stays proposed until the owner approves.
+- id: R-TEMPLATE-1
+  text: Replace with a default requirement for this vertical.
+  status: proposed

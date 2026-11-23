@@ -45,11 +45,18 @@ Lilac is a set of skills and seven agent roles for taking a website or web app f
 | A skill or plugin installed | `skillspector` | scan before install |
 | A bug recorded | `mistakes-root-cause-logger` | root cause, fix, enforcing check |
 | Shipping a finished branch | `ship` | its gate; ask before deploy |
-| The user describes a site | `brief` (user command `/lilac:brief`) | Interview one question at a time, write `BRIEF.md`, run `node "${CLAUDE_PLUGIN_ROOT}/scripts/brief.mjs" check BRIEF.md`; do not build until the human approves the brief |
+| The user describes a site | `brief` (user command `/lilac:brief`) | Parse a pasted BRIEF block with `scripts/brief.mjs block`, ask only the gaps (up to 4 per AskUserQuestion call), write `BRIEF.md`, run `node "${CLAUDE_PLUGIN_ROOT}/scripts/brief.mjs" check BRIEF.md`; do not build until the human approves the brief |
 | Show the site before publishing | `preview` (user command `/lilac:preview`) | `scripts/preview.mjs start`; record approval with `approve --by --quote` ONLY after an explicit yes in the human's own words; any edit makes it stale |
 | See how visitors cope | `persona-test` | `node "${CLAUDE_PLUGIN_ROOT}/scripts/persona-test.mjs" "<project>" --visitors 100`. Visitors are simulated, say so every time |
 | Qualitative opinions | `persona-review` | Spawn 5 to 10 persona subagents; label every item 'AI persona opinion, not real user feedback'; never report a count of users |
 | Where to host | `hosting` (user command `/lilac:hosting`) | ASK the human first (1 Cloudflare default, 2 Vercel, 3 Cloudflare+Supabase, 4 Vercel+Supabase, 5 other). Code is always on GitHub: not a question. Then `node "${CLAUDE_PLUGIN_ROOT}/scripts/hosting.mjs" choose --host <h> --db <d> --project "<project>"`, `check`, `deploy-plan`. Never run the deploy plan yourself |
+| How strict the gates are, or what is approved | `severity`, `status` (user commands `/lilac:severity`, `/lilac:status`) | `scripts/severity.mjs set <dir> <1-10>`; `scripts/approval-guard.mjs status <dir>`. Every approval is an AskUserQuestion (Approve, Change something, Stop); a hook blocks site code while an approval is missing or stale |
+| Requirements and checking them | `requirements`, `fidelity`, `converge` (user commands `/lilac:fidelity`, `/lilac:converge`) | `scripts/requirements.mjs generate <dir>`; `scripts/fidelity.mjs run <dir>` (must-have pass rate is the headline; NEEDS-* is not a pass); `scripts/converge.mjs plan <dir>`, cap 3 rounds |
+| Taste from real sites, or the owner's repos | `references`, `context`, `craft-review` | `scripts/references.mjs` (ask per URL; tokens only), `scripts/context.mjs read` (read-only, proposed facts need the human's yes), `scripts/craft-review.mjs score <dir>` |
+| Motion, assets, speed, laws | `motion`, `performance`, `compliance`, `privacy-analytics` | `motion-budget.mjs`, `assets-check.mjs`, `perf-budget.mjs`, `a11y-law.mjs`, `seo-ready.mjs`, `consent.mjs audit`, `analytics.mjs plan`; fix every error, never claim conformance |
+| The owner updates content; forms; payments | `owner-editing` | `scripts/owner-edit.mjs`; forms in `features/server/forms`, Razorpay in `features/server/payments` |
+| Current facts for a vertical or stack | `research-refresh` | `scripts/knowledge.mjs plan`; fetch only after the human approves the URL list; every fetch is logged |
+| Industry packs | `verticals/` | `scripts/packs.mjs detect <BRIEF.md>` (suggests, the human confirms), `validate <pack>`, `accounts <pack>`; a missing key is UNKNOWN |
 | Find errors before release | `qa` (user command `/lilac:qa`) | `scripts/qa.mjs "<project>"` then `scripts/qa-browser.mjs "<project>"`; fix every error; re-run until both print `0 error(s)`; if a browser is missing the second prints SKIPPED: say so, do not call QA complete |
 | A health check | `/lilac:doctor` | `node "${CLAUDE_PLUGIN_ROOT}/scripts/doctor.mjs"` |
 

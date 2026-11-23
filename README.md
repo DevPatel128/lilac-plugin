@@ -132,7 +132,10 @@ The Planner, Reviewer, Tester and Security agents have no file-edit tool (they c
 | `grill-with-docs` | Interviews a plan until it is sharp, and records the decisions |
 | `mistakes-root-cause-logger` | Records a bug with its root cause and the check that prevents it |
 | `api` · `auth` · `email` | Build an API, sign-in, or customer email properly |
-| `brief` · `foundation` | Interview you into a checked brief; decide architecture and brand kit first, with your approval |
+| `requirements` · `fidelity` · `converge` · `references` · `context` · `craft-review` | Turn the brief into numbered requirements, prove each one on the built site, fix misses; take tokens from sites you like; read your own repos; score craft |
+| `motion` · `performance` · `compliance` · `privacy-analytics` · `owner-editing` · `research-refresh` | Motion tiers and licences, performance budgets, WCAG 2.2 and EAA, consent and analytics, owner editing and forms, sourced knowledge refresh |
+| `severity` · `status` · `statusline` | A 1 to 10 dial for how strict the gates are; every approval as approved, stale or pending; a progress bar |
+| `brief` · `foundation` | Read a BRIEF block or interview you (two screens) into a checked brief; decide architecture and brand kit first, with your approval |
 | `build` · `blocks` · `features-content` · `features-server` | Build in small steps from tested blocks; add content, forms, sign-in and payments safely |
 | `qa` · `controls-test` · `persona-test` · `persona-review` · `ux-review` | Browser checks for errors and dead buttons; simulated visitors; UX review (all labelled as simulated, never real users) |
 | `funnel` | Checks the path from visitor to buying customer, with no conversion claims |

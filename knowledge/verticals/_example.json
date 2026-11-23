@@ -1,0 +1,13 @@
+{
+  "topic": "SAMPLE-topic",
+  "claim": "SAMPLE: format example only, not a real claim",
+  "value": "SAMPLE",
+  "source_url": "https://example.com/sample",
+  "quote": "SAMPLE verbatim quote copied from the source page",
+  "retrieved": "2026-01-01",
+  "expires": "2026-01-31",
+  "confidence": "official",
+  "volatility": "library-version",
+  "status": "verified",
+  "conflict_with": ""
+}

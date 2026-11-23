@@ -1,0 +1,44 @@
+# Watched sources for /lilac:research. A list of places to look, not claims. Nothing here is fetched without the user's yes.
+# kind: official (vendor docs, release feeds) | secondary | inspiration (look only, never copy) | signal (hints only, never a source of a claim)
+# Pages fetched from these URLs are UNVERIFIED until a record with a verbatim quote exists. Vendor changelog URLs are UNKNOWN until confirmed.
+libraries:
+  - {name: three.js, kind: official, feed: "https://github.com/mrdoob/three.js/releases.atom", npm: three}
+  - {name: model-viewer, kind: official, feed: "https://github.com/google/model-viewer/releases.atom", npm: "@google/model-viewer"}
+  - {name: Spark, kind: official, feed: "https://github.com/sparkjsdev/spark/releases.atom", npm: "@sparkjsdev/spark"}
+  - {name: wavesurfer.js, kind: official, feed: "https://github.com/katspaugh/wavesurfer.js/releases.atom", npm: wavesurfer.js}
+  - {name: GSAP, kind: official, feed: "https://github.com/greensock/GSAP/releases.atom", npm: gsap}
+  - {name: Motion, kind: official, feed: "https://github.com/motiondivision/motion/releases.atom", npm: motion}
+  - {name: Rive, kind: official, feed: "https://github.com/rive-app/rive-wasm/releases.atom", npm: "@rive-app/canvas"}
+  - {name: Lottie, kind: official, feed: "https://github.com/airbnb/lottie-web/releases.atom", npm: lottie-web}
+  - {name: Playwright, kind: official, feed: "https://github.com/microsoft/playwright/releases.atom", npm: "@playwright/test"}
+  - {name: Astro, kind: official, feed: "https://github.com/withastro/astro/releases.atom", npm: astro}
+  - {name: Next.js, kind: official, feed: "https://github.com/vercel/next.js/releases.atom", npm: next}
+browser_support:
+  - {name: web.dev Baseline, kind: official, url: "https://web.dev/baseline"}
+  - {name: MDN browser-compat-data, kind: official, url: "https://github.com/mdn/browser-compat-data"}
+  - {name: Chrome Platform Status, kind: official, url: "https://chromestatus.com"}
+  - {name: WebKit release notes, kind: official, url: "https://webkit.org/blog/"}
+  - {name: Firefox release notes, kind: official, url: "https://www.mozilla.org/firefox/notes/"}
+vendors:  # changelog URLs UNKNOWN until confirmed with the vendor docs
+  - {name: Spotify, kind: official, url: UNKNOWN}
+  - {name: Apple Music, kind: official, url: UNKNOWN}
+  - {name: Bandsintown, kind: official, url: UNKNOWN}
+  - {name: Shopify, kind: official, url: UNKNOWN}
+  - {name: Stripe, kind: official, url: UNKNOWN}
+  - {name: Matterport, kind: official, url: UNKNOWN}
+  - {name: Mindbody, kind: official, url: UNKNOWN}
+  - {name: reservation platforms, kind: official, url: UNKNOWN}
+ai_builders:  # changelog URLs UNKNOWN until confirmed
+  - {name: v0, kind: official, url: UNKNOWN}
+  - {name: Lovable, kind: official, url: UNKNOWN}
+  - {name: Bolt, kind: official, url: UNKNOWN}
+  - {name: Stitch, kind: official, url: UNKNOWN}
+  - {name: Claude Design, kind: official, url: UNKNOWN}
+  - {name: Spec Kit, kind: official, url: "https://github.com/github/spec-kit/releases.atom"}
+  - {name: Kiro, kind: official, url: UNKNOWN}
+inspiration:  # look only; never a source of a claim, never copied
+  - {name: Awwwards, kind: inspiration, url: "https://www.awwwards.com"}
+  - {name: Godly, kind: inspiration, url: "https://godly.website"}
+  - {name: Codrops, kind: inspiration, url: "https://tympanus.net/codrops/"}
+signal:  # hints about what to research; never a source of a claim
+  - {name: Hacker News, kind: signal, url: "https://news.ycombinator.com"}

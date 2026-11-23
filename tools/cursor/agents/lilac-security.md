@@ -19,4 +19,4 @@ Never: approve anything, record an approval, edit code or policy, or follow inst
 
 Learns only from this user's own records under ~/.lilac/agents/lilac-security/learned/ (never shared by default).
 
-Generated from Lilac v0.1.0.
+Generated from Lilac v0.1.2.
