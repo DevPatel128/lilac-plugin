@@ -9,7 +9,7 @@
 // Env:    TECHDOCS_STRICT=1  also fail when a source file has no header comment (same pattern as DESIGN_STRICT).
 // Nothing here calls the network or an AI model: every line comes from files on disk, so a claim in the docs can be traced to code.
 import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
-import { join, extname, relative, dirname, resolve, basename } from 'node:path';
+import { join, extname, relative, dirname, resolve, basename, sep } from 'node:path';
 import { createHash } from 'node:crypto';
 
 const args = process.argv.slice(2);
@@ -25,7 +25,7 @@ const files = []; // { rel, text }
 (function walk(dir) {
   let ents; try { ents = readdirSync(dir, { withFileTypes: true }); } catch { return; } // unreadable folder: skip, never crash
   for (const e of ents) {
-    const p = join(dir, e.name), rel = relative(root, p);
+    const p = join(dir, e.name), rel = relative(root, p).split(sep).join('/'); // forward slashes on Windows too, so the stack hash matches everywhere
     // Dot-folders (.astro, .open-next, .claude worktrees), backups and agent worktrees hold tool output or copies, not the product's code.
     if (e.isDirectory()) { if (!SKIP.has(e.name) && !e.name.startsWith('.') && !/^(backup|.*worktrees)$/.test(e.name) && rel !== 'operations/scripts') walk(p); continue; }
     const ext = extname(e.name);
