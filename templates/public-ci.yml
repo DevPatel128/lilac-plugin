@@ -59,7 +59,8 @@ jobs:
             [ -d "$d/site" ] || continue
             echo "== $d"
             node scripts/qa-browser.mjs "$d"
-            node scripts/controls-test.mjs "$d"
+            k=""; [ -f "$d/controls-known.txt" ] && k="--known $d/controls-known.txt"
+            node scripts/controls-test.mjs "$d" $k
           done
       - name: Simulated visitors (20 per example)
         run: |

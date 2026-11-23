@@ -1,0 +1,6 @@
+# Controls the tool cannot reach because they exist only in a state it does not create. Each is proven by tests/state-checks.mjs (see RESULTS.md).
+Next (after: Take the tour)  # tour dialog: tests/state-checks.mjs checks Next, Back, Skip at 360, 768 and 1280 px
+about: Reload to update  # appears only when a new version is waiting: tests/sw.test.js
+about: Clear search and filter  # appears only when a search matches nothing: tests/state-checks.mjs
+about: OK  # shown only in the confirm dialog: tests/state-checks.mjs
+about: Back  # shown only on tour step 2: tests/state-checks.mjs

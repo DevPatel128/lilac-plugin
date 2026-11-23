@@ -32,10 +32,10 @@ import { tmpdir } from 'node:os';
 const args = process.argv.slice(2);
 const flag = (n) => { const i = args.indexOf(n); return i < 0 ? null : args[i + 1]; };
 const json = args.includes('--json');
-const siteArg = flag('--site'), credArg = flag('--credentials');
-const skipArgs = new Set([siteArg, credArg]);
+const siteArg = flag('--site'), credArg = flag('--credentials'), knownArg = flag('--known');
+const skipArgs = new Set([siteArg, credArg, knownArg]);
 const proj = args.find((a) => !a.startsWith('--') && !skipArgs.has(a));
-if (!proj || !existsSync(proj) || !statSync(proj).isDirectory()) { console.error('usage: controls-test.mjs <projectDir> [--site dir] [--json] [--credentials file]'); process.exit(2); }
+if (!proj || !existsSync(proj) || !statSync(proj).isDirectory()) { console.error('usage: controls-test.mjs <projectDir> [--site dir] [--json] [--credentials file] [--known file]'); process.exit(2); }
 const root = resolve(proj);
 
 // ---- credentials: validated before anything starts; values are secrets (never printed) ----
@@ -522,13 +522,20 @@ unv('hover-only, long-press and drag-only controls', 'only click, toggle, typing
 unv('controls inside iframes or shadow roots, and other viewports', 'the sweep reads the top document at 1280 px and 390 px only (tablet widths and real touch are not driven)');
 unv('whether an effect is the RIGHT effect', 'an effect proves the control is wired, not that it does what its label promises; a human or test must judge that');
 
+// --known <file>: lines `exact control label  # reason`. An UNREACHABLE row named there becomes KNOWN-LIMIT (still listed, never silent): the control exists only in a state this tool does not create and the reason says where it is proven instead. A line that matches nothing is reported as stale.
+if (knownArg && existsSync(knownArg)) {
+  const known = new Map(readFileSync(knownArg, 'utf8').split(/\r?\n/).filter((l) => l.trim() && !l.startsWith('#')).map((l) => { const [a, ...b] = l.split(/\s+#\s+/); return [a.trim(), b.join(' # ').trim()]; }));
+  const used = new Set();
+  for (const r of rows) if (r.verdict === 'UNREACHABLE' && known.has(r.label) && known.get(r.label)) { used.add(r.label); r.verdict = 'KNOWN-LIMIT'; r.detail = `proven elsewhere: ${known.get(r.label)}`; }
+  for (const k of known.keys()) if (!used.has(k)) unv(`stale known-limit entry "${k}"`, 'it matched no UNREACHABLE control; remove it, or the control now fails for another reason');
+}
 const blockedRows = blocked.map((b) => ({ host: b.host, msg: b.msg }));
 const by = (v) => rows.filter((r) => r.verdict === v).length;
 const N = rows.length, D = by('DEAD') + by('DISABLED-FOREVER'), B = by('BROKEN-LINK'), P = by('PLACEHOLDER'), U = by('UNREACHABLE');
 const pct = N ? Math.round((100 * (by('OK') + by('TOO-SMALL'))) / N) : 100;
-const summary = `controls-test: ${N} controls, ${D} dead, ${B} broken, ${P} placeholder, ${U} unreachable (${pct}% operable)`;
+const summary = `controls-test: ${N} controls, ${D} dead, ${B} broken, ${P} placeholder, ${U} unreachable${by('KNOWN-LIMIT') ? `, ${by('KNOWN-LIMIT')} known limit (listed, proven elsewhere)` : ''} (${pct}% operable)`;
 const pages = [...new Set(rows.map((r) => r.page))].map((p) => ({ page: p, controls: rows.filter((r) => r.page === p).map(({ label, kind, verdict, detail }) => ({ label, kind, verdict, detail })) }));
-const totals = Object.fromEntries(['OK', 'DEAD', 'DISABLED-FOREVER', 'BROKEN-LINK', 'PLACEHOLDER', 'UNREACHABLE', 'TOO-SMALL'].map((v) => [v, by(v)]));
+const totals = Object.fromEntries(['OK', 'DEAD', 'DISABLED-FOREVER', 'BROKEN-LINK', 'PLACEHOLDER', 'UNREACHABLE', 'TOO-SMALL', 'KNOWN-LIMIT'].map((v) => [v, by(v)]));
 if (json) console.log(redact(JSON.stringify({ site: relative(root, site) || '.', pages, totals, blocked: blockedRows, unverified, summary }, null, 2)));
 else {
   const L = [`Controls test for ${site} (Chrome, 1280 px and 390 px; screenshots of failures in ${join(root, '.lilac', 'controls')})`, ''];
