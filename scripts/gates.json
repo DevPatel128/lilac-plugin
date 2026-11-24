@@ -1,0 +1,261 @@
+{
+  "_note": "One list of every gate and approval. build.mjs, approval-guard.mjs and the skills read it; nothing is hard-coded per skill. JSON, not YAML, so the scripts stay dependency-free. Severity is 1 to 10 (/lilac:severity). A gate or approval applies when severity >= minSeverity. when=pre runs before the preview; when=post runs after it (deferred, still required before deploy). chrome=true gates run one at a time. legacy=true marks the original 0.1.0 gates: with no severity set only those run. requires=<file> skips a gate when that file is absent in the project.",
+  "floor": [
+    "no invented facts (UNKNOWN and SAMPLE markers)",
+    "secrets scan (static qa gate, runs at every severity)",
+    "no unlicensed assets",
+    "approval before deploy",
+    "no real-person imagery without consent"
+  ],
+  "levels": [
+    {
+      "max": 2,
+      "name": "Sketch"
+    },
+    {
+      "max": 4,
+      "name": "Draft"
+    },
+    {
+      "max": 6,
+      "name": "Standard"
+    },
+    {
+      "max": 8,
+      "name": "Strict"
+    },
+    {
+      "max": 10,
+      "name": "Audit"
+    }
+  ],
+  "approvals": [
+    {
+      "id": "brief",
+      "minSeverity": 1,
+      "files": [
+        "BRIEF.md"
+      ]
+    },
+    {
+      "id": "foundation",
+      "minSeverity": 5,
+      "files": [
+        "FOUNDATION.md",
+        "BRAND.md"
+      ]
+    },
+    {
+      "id": "funnel",
+      "minSeverity": 5,
+      "files": [
+        "FUNNEL.md"
+      ]
+    },
+    {
+      "id": "preview",
+      "minSeverity": 3,
+      "files": [
+        "<site tree>"
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "foundation-drift",
+      "name": "foundation drift",
+      "tool": "foundation.mjs",
+      "args": [
+        "drift",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false,
+      "legacy": true
+    },
+    {
+      "id": "static-qa",
+      "name": "static qa",
+      "tool": "qa.mjs",
+      "args": [
+        "{dir}"
+      ],
+      "minSeverity": 1,
+      "when": "pre",
+      "chrome": false,
+      "legacy": true
+    },
+    {
+      "id": "funnel-check",
+      "name": "funnel check",
+      "tool": "funnel.mjs",
+      "args": [
+        "check",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false,
+      "legacy": true
+    },
+    {
+      "id": "ux-graph",
+      "name": "ux-review graph",
+      "tool": "ux-graph-check.mjs",
+      "args": [],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false,
+      "legacy": true
+    },
+    {
+      "id": "qa-browser",
+      "name": "qa-browser",
+      "tool": "qa-browser.mjs",
+      "args": [
+        "{dir}"
+      ],
+      "minSeverity": 3,
+      "when": "post",
+      "chrome": true,
+      "preFrom": 7,
+      "legacy": true
+    },
+    {
+      "id": "controls-test",
+      "name": "controls-test",
+      "tool": "controls-test.mjs",
+      "args": [
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "post",
+      "chrome": true,
+      "preFrom": 7,
+      "legacy": true
+    },
+    {
+      "id": "persona-test",
+      "name": "persona-test (30 simulated visitors)",
+      "tool": "persona-test.mjs",
+      "args": [
+        "{dir}",
+        "--visitors",
+        "30"
+      ],
+      "minSeverity": 7,
+      "when": "post",
+      "chrome": true,
+      "preFrom": 7,
+      "legacy": true
+    },
+    {
+      "id": "fidelity",
+      "name": "fidelity (requirements trace)",
+      "tool": "fidelity.mjs",
+      "args": [
+        "run",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false,
+      "requires": "brief/requirements.yaml"
+    },
+    {
+      "id": "motion-budget",
+      "name": "motion budget",
+      "tool": "motion-budget.mjs",
+      "args": [
+        "check",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false
+    },
+    {
+      "id": "assets-check",
+      "name": "asset licences",
+      "tool": "assets-check.mjs",
+      "args": [
+        "check",
+        "{dir}"
+      ],
+      "minSeverity": 1,
+      "when": "pre",
+      "chrome": false
+    },
+    {
+      "id": "perf-budget",
+      "name": "perf budgets",
+      "tool": "perf-budget.mjs",
+      "args": [
+        "check",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false
+    },
+    {
+      "id": "a11y-law",
+      "name": "a11y-law (WCAG 2.2 + EAA, static)",
+      "tool": "a11y-law.mjs",
+      "args": [
+        "check",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false
+    },
+    {
+      "id": "seo-ready",
+      "name": "seo-ready (SEO + answer engines)",
+      "tool": "seo-ready.mjs",
+      "args": [
+        "check",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false
+    },
+    {
+      "id": "consent-audit",
+      "name": "consent audit",
+      "tool": "consent.mjs",
+      "args": [
+        "audit",
+        "{dir}"
+      ],
+      "minSeverity": 5,
+      "when": "pre",
+      "chrome": false
+    },
+    {
+      "id": "craft-review",
+      "name": "craft review (advice until the blind test is run)",
+      "tool": "craft-review.mjs",
+      "args": [
+        "score",
+        "{dir}"
+      ],
+      "minSeverity": 7,
+      "when": "pre",
+      "chrome": false
+    }
+  ],
+  "deployCommands": [
+    "wrangler (pages )?deploy",
+    "wrangler publish",
+    "vercel( .*)? --prod",
+    "vercel deploy",
+    "netlify deploy( .*)? --prod",
+    "gh-pages",
+    "npm publish",
+    "git push .*(gh-pages|production)"
+  ]
+}

@@ -104,7 +104,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const chromeFlags = (udd) => ['--headless=new', '--disable-gpu', ...(process.env.LILAC_CHROME_NO_SANDBOX === '1' ? ['--no-sandbox'] : []), '--hide-scrollbars', '--no-first-run', '--disable-extensions', '--disable-background-networking', '--disable-sync', '--disable-default-apps', '--mute-audio', '--remote-debugging-pipe', '--remote-debugging-address=127.0.0.1', '--proxy-server=http://127.0.0.1:1', `--user-data-dir=${udd}`, 'about:blank'];
 tmp = mkdtempSync(join(tmpdir(), 'lilac-controls-test-')); chmodSync(tmp, 0o700);
 const udd = join(tmp, 'profile'); mkdirSync(udd, { mode: 0o700 });
-chrome = spawn(CHROME, chromeFlags(udd), { stdio: ['ignore', 'ignore', 'ignore', 'pipe', 'pipe'], detached: process.platform !== 'win32' });
+const ctmp = join(tmp, 'chrome-tmp'); mkdirSync(ctmp, { mode: 0o700 }); // Chrome's own scratch (com.google.Chrome.*) lands inside tmp, so a SIGKILL'd Chrome leaves nothing in the user's TMPDIR
+chrome = spawn(CHROME, chromeFlags(udd), { stdio: ['ignore', 'ignore', 'ignore', 'pipe', 'pipe'], detached: process.platform !== 'win32', env: { ...process.env, TMPDIR: ctmp, TMP: ctmp, TEMP: ctmp } });
 chrome.on('error', () => {});
 const ws = { onmessage: null, send: (s) => { try { chrome.stdio[3].write(s + '\0'); } catch {} }, close: () => {} }; // same shape as a WebSocket, over Chrome's fd 3/4
 { let buf = ''; chrome.stdio[3].on('error', () => {}); chrome.stdio[4].setEncoding('utf8'); chrome.stdio[4].on('error', () => {}); chrome.stdio[4].on('data', (d) => { buf += d; let i; while ((i = buf.indexOf('\0')) >= 0) { const m = buf.slice(0, i); buf = buf.slice(i + 1); if (m) ws.onmessage?.({ data: m }); } }); }

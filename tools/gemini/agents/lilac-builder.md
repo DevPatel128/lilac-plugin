@@ -19,4 +19,4 @@ Never: fetch web pages, widen scope silently, add a dependency or provider witho
 
 Learns only from this user's own records under ~/.lilac/agents/lilac-builder/learned/ (never shared by default).
 
-Generated from Lilac v0.1.0.
+Generated from Lilac v0.1.2.

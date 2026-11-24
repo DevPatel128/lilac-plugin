@@ -37,3 +37,13 @@ Before anything is stored, text is scrubbed (then cut to 200 characters): API ke
 ## Delete everything
 
 `rm -r ~/.lilac` (or `$LILAC_HOME` if you set it).
+
+## Approval guard (PreToolUse)
+
+`scripts/approval-guard.mjs` runs before every `Write`, `Edit`, `MultiEdit` and `Bash` call. It does nothing outside a Lilac project (no `.lilac/state.json`).
+
+- **Blocks site code** (HTML, CSS, JS and framework files; not `BRIEF.md`, `.lilac/`, `brand/`, `design/`, docs) until the approvals the project's severity needs are present and unchanged: brief always, foundation and funnel from severity 5. A changed `BRIEF.md`, `FOUNDATION.md`/`BRAND.md` or `FUNNEL.md` makes its approval STALE, and the next write is refused with a message telling the agent to ask again.
+- **Blocks deploy commands** (`wrangler deploy`, `vercel --prod`, `netlify deploy --prod`, `npm publish`, ...; list in `scripts/gates.json`) unless the preview approval is VALID. This is part of the floor and applies at every severity.
+- `node scripts/approval-guard.mjs status <dir>` (or `/lilac:status`) prints each gate as approved, stale or pending.
+- Kill switch for plugin developers: `LILAC_HOOKS=off`. Every bypass is logged to `.lilac/guard.log`.
+- Honest limit: approvals stay self-attested (above). The guard guarantees the question is asked before code changes; it cannot prove a human clicked. A `Bash` command that edits site files by shell redirect is not caught.

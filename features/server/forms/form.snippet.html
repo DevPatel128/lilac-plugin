@@ -1,0 +1,21 @@
+<!-- Static contact form for forms.mjs. POST to your handler's address (replace /api/contact). Works without JavaScript except the fill-time stamp. -->
+<form method="post" action="/api/contact" id="contact-form">
+  <label for="cf-name">Name</label>
+  <input id="cf-name" name="name" required maxlength="100" autocomplete="name">
+  <label for="cf-email">Email</label>
+  <input id="cf-email" name="email" type="email" required maxlength="254" autocomplete="email">
+  <label for="cf-message">Message</label>
+  <textarea id="cf-message" name="message" required minlength="10" maxlength="5000"></textarea>
+  <label><input type="checkbox" name="consent" value="true" required> I agree to the <a href="/privacy.html">privacy notice</a>.</label>
+  <!-- Honeypot: real visitors never see or fill this. Leave the name `website`. -->
+  <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></div>
+  <!-- Fill-time stamp: set when the page loads. Handler refuses a post under 3 seconds. -->
+  <input type="hidden" name="ts" id="cf-ts">
+  <!-- Optional spam check: uncomment ONE, put your PUBLIC site key in data-sitekey. The secret stays in the host's environment (TURNSTILE_SECRET or HCAPTCHA_SECRET).
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <div class="cf-turnstile" data-sitekey="YOUR_PUBLIC_SITE_KEY"></div>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <div class="h-captcha" data-sitekey="YOUR_PUBLIC_SITE_KEY"></div> -->
+  <button type="submit">Send</button>
+</form>
+<script>document.getElementById('cf-ts').value = String(Date.now());</script>

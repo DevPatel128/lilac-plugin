@@ -19,8 +19,8 @@ add(tsOk.status === 0 ? 'ok' : 'fail', 'Node can run Lilac', `Node ${process.ver
 // 2. Plugin files present and not truncated.
 const skills = existsSync(join(root, 'skills')) ? readdirSync(join(root, 'skills')).filter((d) => existsSync(join(root, 'skills', d, 'SKILL.md'))) : [];
 const agents = existsSync(join(root, 'agents')) ? readdirSync(join(root, 'agents')).filter((f) => f.endsWith('.md')) : [];
-add(skills.length >= 10 && agents.length === 7 ? 'ok' : 'fail', 'Plugin files are complete', `${skills.length} skills, ${agents.length} agents`, 'Reinstall: /plugin uninstall lilac@lilac, then /plugin install lilac@lilac.');
-for (const f of ['scripts/techdocs.mjs', 'handoff/handoff.mjs', 'learning/config.mjs']) if (!existsSync(join(root, f))) add('fail', `Missing ${f}`, '', 'Reinstall the plugin.');
+add(skills.length >= 10 && agents.length === 8 ? 'ok' : 'fail', 'Plugin files are complete', `${skills.length} skills, ${agents.length} agents`, 'Reinstall: /plugin uninstall lilac@lilac, then /plugin install lilac@lilac.');
+for (const f of ['scripts/techdocs.mjs', 'handoff/handoff.mjs', 'learning/config.mjs', 'scripts/approval-guard.mjs', 'scripts/gates.json', 'scripts/gates-config.mjs']) if (!existsSync(join(root, f))) add('fail', `Missing ${f}`, '', 'Reinstall the plugin.');
 
 // 3. Chrome: only needed for the PDF. Missing Chrome is a warning, never a failure.
 const chrome = process.env.CHROME && existsSync(process.env.CHROME) ? process.env.CHROME

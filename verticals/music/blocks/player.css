@@ -1,0 +1,6 @@
+:focus-visible{outline:3px solid #7c3aed;outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px}
+#player{position:fixed;bottom:0;left:0;right:0;display:flex;gap:1rem;align-items:center;padding:.75rem 1rem;background:#fff;border-top:1px solid #ccc}
+#swap{padding-bottom:5rem;transition:opacity .15s}
+#swap.swapping{opacity:.4}
+@media (prefers-reduced-motion:reduce){#swap{transition:none}*{animation:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,11 @@
+<div class="yt" data-id="UNKNOWN"><button type="button" aria-label="Load video">Load video</button></div>
+<script>
+// No request to YouTube until the visitor clicks. data-id must be supplied by the owner.
+document.querySelectorAll('.yt').forEach(function (d) {
+  d.querySelector('button').addEventListener('click', function () {
+    if (d.dataset.id === 'UNKNOWN') { d.textContent = 'UNKNOWN: no video id supplied'; return; }
+    var f = document.createElement('iframe'); f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(d.dataset.id) + '?autoplay=0';
+    f.title = 'Video'; f.allow = 'encrypted-media'; f.loading = 'lazy'; d.replaceChildren(f);
+  });
+});
+</script>
